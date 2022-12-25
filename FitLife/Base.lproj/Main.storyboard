@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CSo-g3-CRx">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CSo-g3-CRx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,8 +12,16 @@
             <objects>
                 <viewController title="HomeScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="FitLife" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMB-Zs-kRs">
+                                <rect key="frame" x="158" y="253" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.2470588235" green="0.67843137249999996" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -30,18 +37,18 @@
             <objects>
                 <viewController id="UvC-lw-aEh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lS9-tV-pfe">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-xE-Sk5">
-                                <rect key="frame" x="10.666666666666686" y="292" width="600" height="600"/>
+                                <rect key="frame" x="21" y="336" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1b2-xE-Sk5" secondAttribute="height" id="XpP-d5-KPL"/>
                                     <constraint firstAttribute="height" constant="600" id="wa8-Mu-n0p"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uya-aJ-tms">
-                                <rect key="frame" x="61.666666666666657" y="108.99999999999999" width="270" height="130.66666666666663"/>
+                                <rect key="frame" x="72" y="94" width="270" height="131"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ysw-eK-6hK">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="90"/>
@@ -51,7 +58,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Better Workouts.  Better You." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXI-p1-BUh">
-                                        <rect key="frame" x="0.0" y="90" width="270" height="40.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="90" width="270" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,7 +66,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4I-Dz-f3X">
-                                <rect key="frame" x="121.66666666666669" y="718" width="150" height="40"/>
+                                <rect key="frame" x="132" y="762" width="150" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="U28-we-Pn7"/>
@@ -110,7 +117,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aDk-ar-dRq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" style="editor" id="56v-QV-ssb"/>
+                    <navigationItem key="navigationItem" id="56v-QV-ssb"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nk2-DE-LMw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
