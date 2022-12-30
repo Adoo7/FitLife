@@ -45,6 +45,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVk-xP-Ybz">
                                 <rect key="frame" x="41.5" y="718" width="331.5" height="70"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRN-YN-rvC">
+                                        <rect key="frame" x="26" y="17" width="281" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="1Xv-Ws-EPJ" kind="showDetail" id="sic-fJ-z4r"/>
+                                        </connections>
+                                    </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jc5-50-dkN">
                                         <rect key="frame" x="31" y="56" width="254" height="4"/>
                                     </progressView>
@@ -226,6 +235,16 @@
             </objects>
             <point key="canvasLocation" x="63.768115942028992" y="776.78571428571422"/>
         </scene>
+        <!--idk-->
+        <scene sceneID="fer-0X-aZf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CalorieCounterStoryboard" referencedIdentifier="idk" id="1Xv-Ws-EPJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Wfk-gs-e97"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ng-tc-4ek" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="1304"/>
+        </scene>
         <!--WorkoutPage-->
         <scene sceneID="nFW-1p-6e7">
             <objects>
@@ -388,13 +407,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPL-Rs-ssN">
-                                                                <rect key="frame" x="15" y="21.5" width="30" height="20.5"/>
+                                                                <rect key="frame" x="15" y="21.5" width="26" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Us-aq-pcd">
-                                                                <rect key="frame" x="43" y="17" width="328" height="31"/>
+                                                                <rect key="frame" x="39" y="17" width="332" height="31"/>
                                                             </slider>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4g-Fl-45Z">
                                                                 <rect key="frame" x="369" y="4.5" width="15" height="54.5"/>
@@ -432,13 +451,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAX-Fd-iqx">
-                                                                <rect key="frame" x="15" y="21.5" width="53.5" height="20.5"/>
+                                                                <rect key="frame" x="15" y="21.5" width="49.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-Cj-T9M">
-                                                                <rect key="frame" x="66.5" y="16.5" width="304.5" height="31"/>
+                                                                <rect key="frame" x="62.5" y="16.5" width="308.5" height="31"/>
                                                             </slider>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dux-fn-9Df">
                                                                 <rect key="frame" x="369" y="4.5" width="15" height="54.5"/>
@@ -476,13 +495,13 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbq-2O-qCD">
-                                                                <rect key="frame" x="15" y="21.5" width="50.5" height="20.5"/>
+                                                                <rect key="frame" x="15" y="21.5" width="46.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dAH-c9-JBt">
-                                                                <rect key="frame" x="63.5" y="16.5" width="307.5" height="31"/>
+                                                                <rect key="frame" x="59.5" y="16.5" width="311.5" height="31"/>
                                                             </slider>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqW-3k-vqr">
                                                                 <rect key="frame" x="369" y="4.5" width="15" height="54.5"/>
