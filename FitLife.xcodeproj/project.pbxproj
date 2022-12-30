@@ -18,6 +18,7 @@
 		608CB69C2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */; };
 		60DD1F9E295DA0D8009E436F /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DD1F9D295DA0D8009E436F /* ItemTableViewCell.swift */; };
 		60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DD1F9F295DA392009E436F /* ItemListViewController.swift */; };
+		60F64E10295F3F7200CB66B2 /* AddItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60F64E0F295F3F7200CB66B2 /* AddItemStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitLifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		60DD1F9D295DA0D8009E436F /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		60DD1F9F295DA392009E436F /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		60F64E0F295F3F7200CB66B2 /* AddItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddItemStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				608CB67A2957BE870093B5F8 /* SceneDelegate.swift */,
 				608CB67C2957BE880093B5F8 /* ViewController.swift */,
 				608CB67E2957BE880093B5F8 /* Main.storyboard */,
+				60F64E0F295F3F7200CB66B2 /* AddItemStoryboard.storyboard */,
 				60DD1F9D295DA0D8009E436F /* ItemTableViewCell.swift */,
 				60DD1F9F295DA392009E436F /* ItemListViewController.swift */,
 				608CB6812957BE880093B5F8 /* Assets.xcassets */,
@@ -237,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F64E10295F3F7200CB66B2 /* AddItemStoryboard.storyboard in Resources */,
 				608CB6852957BE880093B5F8 /* LaunchScreen.storyboard in Resources */,
 				608CB6822957BE880093B5F8 /* Assets.xcassets in Resources */,
 				608CB6802957BE880093B5F8 /* Main.storyboard in Resources */,
