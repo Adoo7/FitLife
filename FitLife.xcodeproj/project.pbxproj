@@ -19,6 +19,8 @@
 		608CB6902957BE890093B5F8 /* FitLifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB68F2957BE890093B5F8 /* FitLifeTests.swift */; };
 		608CB69A2957BE890093B5F8 /* FitLifeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB6992957BE890093B5F8 /* FitLifeUITests.swift */; };
 		608CB69C2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */; };
+		60B8B97029604D5E005F396B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B96E29604D5E005F396B /* CategoryTableViewCell.swift */; };
+		60B8B97129604D5E005F396B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B96F29604D5E005F396B /* CategoryTableViewController.swift */; };
 		60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DD1F9F295DA392009E436F /* ItemListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		608CB6952957BE890093B5F8 /* FitLifeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitLifeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		608CB6992957BE890093B5F8 /* FitLifeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitLifeUITests.swift; sourceTree = "<group>"; };
 		608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitLifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		60B8B96E29604D5E005F396B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = ../../../FitLife/FitLife/CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		60B8B96F29604D5E005F396B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = ../../../FitLife/FitLife/CategoryTableViewController.swift; sourceTree = "<group>"; };
 		60DD1F9F295DA392009E436F /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +118,8 @@
 				41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */,
 				608CB67E2957BE880093B5F8 /* Main.storyboard */,
 				603E450F295F5EF6007C548D /* ItemTableViewCell.swift */,
+				60B8B96E29604D5E005F396B /* CategoryTableViewCell.swift */,
+				60B8B96F29604D5E005F396B /* CategoryTableViewController.swift */,
 				60DD1F9F295DA392009E436F /* ItemListViewController.swift */,
 				608CB6812957BE880093B5F8 /* Assets.xcassets */,
 				608CB6832957BE880093B5F8 /* LaunchScreen.storyboard */,
@@ -272,11 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60B8B97129604D5E005F396B /* CategoryTableViewController.swift in Sources */,
 				60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */,
 				608CB67D2957BE880093B5F8 /* ViewController.swift in Sources */,
 				608CB6792957BE870093B5F8 /* AppDelegate.swift in Sources */,
 				608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */,
 				603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */,
+				60B8B97029604D5E005F396B /* CategoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
