@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		41C757F2295F3F67006285F3 /* CalorieCounterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */; };
 		41C757F4295F567A006285F3 /* ViewItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */; };
-		603E4509295F5DC1007C548D /* AddItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603E4505295F5DC1007C548D /* AddItemStoryboard.storyboard */; };
-		603E450A295F5DC1007C548D /* CategoryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603E4506295F5DC1007C548D /* CategoryStoryboard.storyboard */; };
-		603E450B295F5DC1007C548D /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E4507295F5DC1007C548D /* CategoryTableViewCell.swift */; };
-		603E450C295F5DC1007C548D /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E4508295F5DC1007C548D /* CategoryTableViewController.swift */; };
 		603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E450F295F5EF6007C548D /* ItemTableViewCell.swift */; };
 		608CB6792957BE870093B5F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB6782957BE870093B5F8 /* AppDelegate.swift */; };
 		608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB67A2957BE870093B5F8 /* SceneDelegate.swift */; };
@@ -46,10 +42,6 @@
 /* Begin PBXFileReference section */
 		41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieCounterStoryboard.storyboard; sourceTree = "<group>"; };
 		41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewItemStoryboard.storyboard; sourceTree = "<group>"; };
-		603E4505295F5DC1007C548D /* AddItemStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddItemStoryboard.storyboard; path = ../../../FitLife/FitLife/AddItemStoryboard.storyboard; sourceTree = "<group>"; };
-		603E4506295F5DC1007C548D /* CategoryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CategoryStoryboard.storyboard; path = ../../../FitLife/FitLife/CategoryStoryboard.storyboard; sourceTree = "<group>"; };
-		603E4507295F5DC1007C548D /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = ../../../FitLife/FitLife/CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		603E4508295F5DC1007C548D /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = ../../../FitLife/FitLife/CategoryTableViewController.swift; sourceTree = "<group>"; };
 		603E450F295F5EF6007C548D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		608CB6752957BE870093B5F8 /* FitLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		608CB6782957BE870093B5F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,10 +112,6 @@
 				608CB67C2957BE880093B5F8 /* ViewController.swift */,
 				41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */,
 				41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */,
-				603E4505295F5DC1007C548D /* AddItemStoryboard.storyboard */,
-				603E4506295F5DC1007C548D /* CategoryStoryboard.storyboard */,
-				603E4507295F5DC1007C548D /* CategoryTableViewCell.swift */,
-				603E4508295F5DC1007C548D /* CategoryTableViewController.swift */,
 				608CB67E2957BE880093B5F8 /* Main.storyboard */,
 				603E450F295F5EF6007C548D /* ItemTableViewCell.swift */,
 				60DD1F9F295DA392009E436F /* ItemListViewController.swift */,
@@ -255,9 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603E4509295F5DC1007C548D /* AddItemStoryboard.storyboard in Resources */,
 				608CB6852957BE880093B5F8 /* LaunchScreen.storyboard in Resources */,
-				603E450A295F5DC1007C548D /* CategoryStoryboard.storyboard in Resources */,
 				608CB6822957BE880093B5F8 /* Assets.xcassets in Resources */,
 				41C757F4295F567A006285F3 /* ViewItemStoryboard.storyboard in Resources */,
 				608CB6802957BE880093B5F8 /* Main.storyboard in Resources */,
@@ -286,13 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				603E450B295F5DC1007C548D /* CategoryTableViewCell.swift in Sources */,
 				60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */,
 				608CB67D2957BE880093B5F8 /* ViewController.swift in Sources */,
 				608CB6792957BE870093B5F8 /* AppDelegate.swift in Sources */,
 				608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */,
 				603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */,
-				603E450C295F5DC1007C548D /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
