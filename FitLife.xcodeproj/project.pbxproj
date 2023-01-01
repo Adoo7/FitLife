@@ -12,7 +12,6 @@
 		603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E450F295F5EF6007C548D /* ItemTableViewCell.swift */; };
 		608CB6792957BE870093B5F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB6782957BE870093B5F8 /* AppDelegate.swift */; };
 		608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB67A2957BE870093B5F8 /* SceneDelegate.swift */; };
-		608CB67D2957BE880093B5F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB67C2957BE880093B5F8 /* ViewController.swift */; };
 		608CB6802957BE880093B5F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608CB67E2957BE880093B5F8 /* Main.storyboard */; };
 		608CB6822957BE880093B5F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 608CB6812957BE880093B5F8 /* Assets.xcassets */; };
 		608CB6852957BE880093B5F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 608CB6832957BE880093B5F8 /* LaunchScreen.storyboard */; };
@@ -21,6 +20,8 @@
 		608CB69C2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */; };
 		60B8B97029604D5E005F396B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B96E29604D5E005F396B /* CategoryTableViewCell.swift */; };
 		60B8B97129604D5E005F396B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B96F29604D5E005F396B /* CategoryTableViewController.swift */; };
+		60B8B9762961F81D005F396B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B9742961F81D005F396B /* ViewController.swift */; };
+		60B8B9782961FBFA005F396B /* CalorieCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B9772961FBFA005F396B /* CalorieCounterViewController.swift */; };
 		60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DD1F9F295DA392009E436F /* ItemListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +49,6 @@
 		608CB6752957BE870093B5F8 /* FitLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		608CB6782957BE870093B5F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		608CB67A2957BE870093B5F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		608CB67C2957BE880093B5F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		608CB67F2957BE880093B5F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		608CB6812957BE880093B5F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		608CB6842957BE880093B5F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitLifeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		60B8B96E29604D5E005F396B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = ../../../FitLife/FitLife/CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		60B8B96F29604D5E005F396B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = ../../../FitLife/FitLife/CategoryTableViewController.swift; sourceTree = "<group>"; };
+		60B8B9742961F81D005F396B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../FitLife/FitLife/ViewController.swift; sourceTree = "<group>"; };
+		60B8B9772961FBFA005F396B /* CalorieCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieCounterViewController.swift; sourceTree = "<group>"; };
 		60DD1F9F295DA392009E436F /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,8 +115,9 @@
 			children = (
 				608CB6782957BE870093B5F8 /* AppDelegate.swift */,
 				608CB67A2957BE870093B5F8 /* SceneDelegate.swift */,
-				608CB67C2957BE880093B5F8 /* ViewController.swift */,
+				60B8B9742961F81D005F396B /* ViewController.swift */,
 				41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */,
+				60B8B9772961FBFA005F396B /* CalorieCounterViewController.swift */,
 				41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */,
 				608CB67E2957BE880093B5F8 /* Main.storyboard */,
 				603E450F295F5EF6007C548D /* ItemTableViewCell.swift */,
@@ -280,11 +283,12 @@
 			files = (
 				60B8B97129604D5E005F396B /* CategoryTableViewController.swift in Sources */,
 				60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */,
-				608CB67D2957BE880093B5F8 /* ViewController.swift in Sources */,
 				608CB6792957BE870093B5F8 /* AppDelegate.swift in Sources */,
 				608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */,
 				603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */,
+				60B8B9762961F81D005F396B /* ViewController.swift in Sources */,
 				60B8B97029604D5E005F396B /* CategoryTableViewCell.swift in Sources */,
+				60B8B9782961FBFA005F396B /* CalorieCounterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
