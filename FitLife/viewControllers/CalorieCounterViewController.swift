@@ -23,7 +23,12 @@ class CalorieCounterViewController: UIViewController {
         calorieLabel1.text = String(slider1Value.value.clean);
     }
     
+    @IBOutlet weak var calorieLabel2: UILabel!
+    @IBOutlet weak var slider2Value: UISlider!
     
+    @IBAction func slider2(_ sender: Any) {
+        calorieLabel2.text = String(slider2Value.value.clean)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
