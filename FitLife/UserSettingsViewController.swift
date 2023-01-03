@@ -14,6 +14,7 @@ import UniformTypeIdentifiers
 
 class UserSettingsViewController: UIViewController, UINavigationControllerDelegate{
 
+    @IBOutlet weak var userImage: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,7 +59,16 @@ extension UserSettingsViewController : UIImagePickerControllerDelegate ,UINaviga
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         print(info)
         
+        let data = convertFormUIimageTODict(info)
         
+        if let editingImage = data[convertInfoKey((UIImagePickerController.InfoKey.editedImage))] as? UIImage{
+            print(editingImage)
+            self.userImage.setImage(editingImage, for: .normal)
+            
+        
+        
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
