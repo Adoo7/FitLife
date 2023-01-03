@@ -45,7 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = "../../../.Trash/FitLife 16.16.06/FitLife/UserSettingsViewController.swift"; sourceTree = "<group>"; };
+		41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieCounterStoryboard.storyboard; sourceTree = "<group>"; };
 		41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewItemStoryboard.storyboard; sourceTree = "<group>"; };
 		603E450F295F5EF6007C548D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
