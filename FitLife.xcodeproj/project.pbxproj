@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41C43F9329646C8E00FBE6C6 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */; };
 		41C757F2295F3F67006285F3 /* CalorieCounterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */; };
 		41C757F4295F567A006285F3 /* ViewItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */; };
 		603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E450F295F5EF6007C548D /* ItemTableViewCell.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = "../../../.Trash/FitLife 16.16.06/FitLife/UserSettingsViewController.swift"; sourceTree = "<group>"; };
 		41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieCounterStoryboard.storyboard; sourceTree = "<group>"; };
 		41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewItemStoryboard.storyboard; sourceTree = "<group>"; };
 		603E450F295F5EF6007C548D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */,
 				41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */,
 				608CB67E2957BE880093B5F8 /* Main.storyboard */,
+				41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */,
 				608CB6832957BE880093B5F8 /* LaunchScreen.storyboard */,
 				603E450F295F5EF6007C548D /* ItemTableViewCell.swift */,
 				60DD1F9F295DA392009E436F /* ItemListViewController.swift */,
@@ -322,6 +325,7 @@
 				60B8B98429632149005F396B /* ViewController.swift in Sources */,
 				603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */,
 				60B8B98B296352AF005F396B /* CategoryTableViewController.swift in Sources */,
+				41C43F9329646C8E00FBE6C6 /* UserSettingsViewController.swift in Sources */,
 				60B8B9782961FBFA005F396B /* CalorieCounterViewController.swift in Sources */,
 				60B8B98629632528005F396B /* newItemViewController.swift in Sources */,
 				60B8B97F2963205C005F396B /* CategoryTableViewCell.swift in Sources */,
