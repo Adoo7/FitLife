@@ -116,6 +116,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="XIj-Up-8Ta"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider3:" destination="Y6W-OH-hqX" eventType="valueChanged" id="tpy-R4-lPG"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -141,6 +144,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="eEr-ll-AoS"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider4:" destination="Y6W-OH-hqX" eventType="valueChanged" id="weA-Me-VA1"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -166,6 +172,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="THe-Wz-3Fe"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider5:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Rta-KP-TYN"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -191,6 +200,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="LrH-bJ-wL2"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider6:" destination="Y6W-OH-hqX" eventType="valueChanged" id="Vld-X5-i8g"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -216,6 +228,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="0G1-pU-MO1"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider7:" destination="Y6W-OH-hqX" eventType="valueChanged" id="IlI-dB-QVT"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -241,6 +256,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="EMF-6f-6TP"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider8:" destination="Y6W-OH-hqX" eventType="valueChanged" id="S8H-Ig-Vpe"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -266,6 +284,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="wdO-cB-ff7"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider9:" destination="Y6W-OH-hqX" eventType="valueChanged" id="SAY-wh-mKq"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -291,6 +312,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="8pC-Tl-WJU"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider10:" destination="Y6W-OH-hqX" eventType="valueChanged" id="D5G-cA-YKe"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -316,6 +340,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="RDX-dn-fEA"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slider11:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ZHN-ap-53l"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -333,6 +360,9 @@
                                         <integer key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tzl-T2-ITT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -355,9 +385,27 @@
                     <navigationItem key="navigationItem" id="Zci-fB-yYB"/>
                     <connections>
                         <outlet property="calorieLabel1" destination="Y9T-le-MRK" id="CQy-cV-NTy"/>
+                        <outlet property="calorieLabel10" destination="57i-vw-9dy" id="mzD-4Y-MfG"/>
+                        <outlet property="calorieLabel11" destination="JDk-Or-HSy" id="Atl-1g-0dW"/>
                         <outlet property="calorieLabel2" destination="vpu-fE-eHB" id="Hjz-Xg-KEy"/>
+                        <outlet property="calorieLabel3" destination="AXx-wU-bg3" id="Lvs-RO-xWo"/>
+                        <outlet property="calorieLabel4" destination="Ocf-Ox-u9S" id="EuA-Ng-VaP"/>
+                        <outlet property="calorieLabel5" destination="5dL-cN-ajc" id="sjn-ui-5PO"/>
+                        <outlet property="calorieLabel6" destination="mjy-hY-Avm" id="m49-TF-A2x"/>
+                        <outlet property="calorieLabel7" destination="xng-rd-hZl" id="iRv-rI-JNw"/>
+                        <outlet property="calorieLabel8" destination="IPz-KP-Nqf" id="xfU-Gp-N4t"/>
+                        <outlet property="calorieLabel9" destination="Mon-bG-d11" id="jyk-bQ-qk1"/>
+                        <outlet property="slider10Value" destination="s7Y-ET-uvg" id="n6q-Dt-uei"/>
+                        <outlet property="slider11Value" destination="tSB-TN-ktd" id="Nun-IW-vnu"/>
                         <outlet property="slider1Value" destination="2NS-9O-2P0" id="DTk-Ts-Hg5"/>
                         <outlet property="slider2Value" destination="IqT-No-tZz" id="uU5-tA-7i0"/>
+                        <outlet property="slider3Value" destination="DR0-jv-Unf" id="Dfi-bo-1lg"/>
+                        <outlet property="slider4Value" destination="1nJ-S9-OPG" id="38H-On-hYL"/>
+                        <outlet property="slider5Value" destination="S9X-a8-XEv" id="v4r-2a-mKK"/>
+                        <outlet property="slider6Value" destination="kXH-BD-mZz" id="KO1-Qg-E76"/>
+                        <outlet property="slider7Value" destination="07v-cr-pPh" id="QSG-RI-3k5"/>
+                        <outlet property="slider8Value" destination="c6j-fa-PgM" id="2JP-gc-Oys"/>
+                        <outlet property="slider9Value" destination="VuR-gz-iW9" id="j7K-CT-idp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
