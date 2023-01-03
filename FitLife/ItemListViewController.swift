@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ItemListViewController: UIViewController, UITableViewDataSource {
+struct Workout {
+    let title:String
+    let imageName: String
+}
 
-    struct Workout {
-        let title:String
-        let imageName: String
-    }
+class ItemListViewController: UIViewController, UITableViewDataSource {
     
     let data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo"),
