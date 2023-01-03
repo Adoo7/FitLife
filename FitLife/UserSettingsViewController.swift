@@ -6,40 +6,69 @@
 //
 
 import UIKit
+import MobileCoreServices
+import UniformTypeIdentifiers
 
-class UserSettingsViewController: UIViewController {
+
+
+
+class UserSettingsViewController: UIViewController, UINavigationControllerDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var profilePic: UIImageView!
     
     @IBAction func onClickSelectedImage(_ sender: Any){
-        
+        actionSheet()
     }
     
     func actionSheet(){
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Open camera", style: .default, handler: { (handler) in }))
+        alert.addAction(UIAlertAction(title: "Open camera", style: .default, handler: { (handler) in self.openCamera() }))
         
-        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (handler) in }))
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (handler) in self.openGallery()}))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (handler) in }))
+        self.present(alert,animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-     @IBOutlet weak var profilePic: UIImageView!
-     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func openCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let image = UIImagePickerController()
+            image.allowsEditing = true
+            image.sourceType = .camera
+            image.mediaTypes = [UTType.image.identifier as String]
+            self.present(image, animated: true, completion: nil)
+        }
     }
-    */
-
+    func openGallery(){
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            let image = UIImagePickerController()
+            image.allowsEditing = true
+            image.delegate = self
+            self.present(image, animated: true, completion: nil)
+        }
+    }
+   
+}
+extension UserSettingsViewController : UIImagePickerControllerDelegate ,UINavigationBarDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        print(info)
+        
+        
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func convertFormUIimageTODict( _ input :[UIImagePickerController.InfoKey: Any]) -> [String : Any]{
+        return Dictionary(uniqueKeysWithValues: input.map({key, value in (key.rawValue, value)}))
+    }
+    
+    func convertInfoKey(_ input : UIImagePickerController.InfoKey) -> String{
+        return input.rawValue
+    }
+    
 }
