@@ -12,17 +12,58 @@ import UniformTypeIdentifiers
 
 
 
-class UserSettingsViewController: UIViewController, UINavigationControllerDelegate{
 
-    @IBOutlet weak var userImage: UIButton!
+class UserSettingsViewController: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    @IBOutlet weak var location: UITextField!
+    @IBOutlet weak var imageUser: UIImageView!
+    
+    @IBOutlet weak var date: UIDatePicker!
+    @IBAction func ageSlider(_ sender: UISlider) {
+        ageLabel.text = "Age " + String(Int(sender.value))
+    }
+    @IBAction func heightSlider(_ sender: UISlider) {
+        heightLabel.text = "Height " + String(Int(sender.value))
+    }
+    @IBOutlet weak var genderPicker: UIPickerView!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBAction func weightSlider(_ sender: UISlider) {
+        weightLabel.text = "Weight " + String(Int(sender.value))
+    }
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var nameText: UITextField!
+    
+    let data = ["Male","Female"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onClickSelectedImage))
+        
+        imageUser.addGestureRecognizer(tapGesture)
+        
+        imageUser.isUserInteractionEnabled = true
+        
+        genderPicker.dataSource = self
+        genderPicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return data.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)
+    -> String?
+    { return data[row] }
     
-    @IBAction func onClickSelectedImage(_ sender: Any){
-        actionSheet()
+    @objc func onClickSelectedImage(sender: UITapGestureRecognizer){
+        if sender.state == .ended{
+            actionSheet()
+        }
     }
     
     func actionSheet(){
@@ -63,10 +104,7 @@ extension UserSettingsViewController : UIImagePickerControllerDelegate ,UINaviga
         
         if let editingImage = data[convertInfoKey((UIImagePickerController.InfoKey.editedImage))] as? UIImage{
             print(editingImage)
-            self.userImage.setImage(editingImage, for: .normal)
-            
-        
-        
+            self.imageUser.image = editingImage
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -82,3 +120,6 @@ extension UserSettingsViewController : UIImagePickerControllerDelegate ,UINaviga
     }
     
 }
+
+
+
