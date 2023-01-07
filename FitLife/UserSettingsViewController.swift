@@ -9,11 +9,9 @@ import UIKit
 import MobileCoreServices
 import UniformTypeIdentifiers
 
-
-
-
-
 class UserSettingsViewController: UIViewController, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+    @IBOutlet weak var id: UILabel!
+    var random = Int.random(in: 0..<1000)
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -41,7 +39,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        id.text = "User id: " + String(random)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onClickSelectedImage))
         
         imageUser.addGestureRecognizer(tapGesture)

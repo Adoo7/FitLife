@@ -471,7 +471,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIQ-lk-S72">
-                                                        <rect key="frame" x="20" y="0.0" width="119" height="30"/>
+                                                        <rect key="frame" x="20" y="0.0" width="219" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="219" id="wxH-8N-A04"/>
                                                         </constraints>
@@ -480,7 +480,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="FCd-r0-eWi">
-                                                        <rect key="frame" x="149" y="0.0" width="200" height="30"/>
+                                                        <rect key="frame" x="249" y="0.0" width="100" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="XZp-WU-w1S"/>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="180" id="cAq-j2-AuS"/>
@@ -606,6 +606,7 @@
                         <outlet property="date" destination="FCd-r0-eWi" id="WtI-u8-aig"/>
                         <outlet property="genderPicker" destination="XA4-MQ-dcx" id="Q7R-6M-wMz"/>
                         <outlet property="heightLabel" destination="iHG-wS-nJ8" id="4DK-Qb-04U"/>
+                        <outlet property="id" destination="7Cb-X4-1pu" id="FGn-JY-J8A"/>
                         <outlet property="imageUser" destination="8aS-FO-cgj" id="Msi-sa-H7t"/>
                         <outlet property="location" destination="0Hj-G4-O4n" id="2BX-mm-CIp"/>
                         <outlet property="weightLabel" destination="QoY-Dh-w67" id="QIJ-1W-lXT"/>
