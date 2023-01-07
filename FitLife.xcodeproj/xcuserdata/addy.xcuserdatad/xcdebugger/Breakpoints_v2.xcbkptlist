@@ -3,4 +3,146 @@
    uuid = "68B5415C-DBF3-4F3E-9C8F-658E1CC72A76"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitLife/ItemListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "ItemListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - c5139d49645b7924"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.ItemListViewController.itemTable.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/addy/Documents/Github%20Xcode/FitLife/FitLife/ItemListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - ddf58b09b3614d30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.ItemListViewController.itemTable.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/addy/Documents/Github%20Xcode/FitLife/FitLife/ItemListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - 59a7a32e33111427"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.ItemListViewController.itemTable.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/addy/Documents/Github%20Xcode/FitLife/FitLife/ItemListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - fd5162a5269e2737"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.ItemListViewController.itemTable.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/addy/Documents/Github%20Xcode/FitLife/FitLife/ItemListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - 8cfc83fceb578a3a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.ItemListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FitLife.ItemListViewController"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/addy/Documents/Github%20Xcode/FitLife/FitLife/ItemListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "660">
+               </Location>
+               <Location
+                  uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - 8106bdef1935c43d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.ItemListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FitLife.ItemListViewController&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/addy/Documents/Github%20Xcode/FitLife/FitLife/ItemListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65DB088B-5F21-48AB-8430-BEFC33095F06"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitLife/ItemListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "ItemListViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A913C6C-BF01-4981-91CA-E274CD9AE3B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FitLife/AddItemViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
