@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var waterCounter = 0;
+    var sliderArray: [String] = []
     
     
     override func viewDidLoad() {
@@ -36,7 +37,7 @@ class ViewController: UIViewController {
         waterLabel.text = "\(waterCounter)/8";
     }
     var calorieLabelsArr: [String] = []
-    var calorieSlidersArr: [Int32] = []
+    var calorieSlidersArr: [String] = []
     
     
     @IBOutlet weak var caloriesLbl: UILabel!
@@ -44,10 +45,18 @@ class ViewController: UIViewController {
     @IBAction func unwindToHomePage(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as? CalorieCounterViewController
         // Use data from the view controller which initiated the unwind segue
-        if let changeText = (sourceViewController?.totalCals)
+        if let changeText = (sourceViewController?.totalCalories), let arr1 = sourceViewController?.slidersArr
         {
             caloriesLbl.text = String(changeText)
+            sliderArray = arr1
         }
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as? CalorieCounterViewController
+        destinationVC?.slidersArr = sliderArray
     }
     
     

@@ -16,8 +16,11 @@ class CalorieCounterViewController: UIViewController {
 
 
     
-    var totalCalories = 5
-    var totalCals = 2
+    var totalCalories = 0
+    var labelsArr: [String] = []
+    var slidersArr: [String] = []
+    
+    
     
     @IBOutlet weak var calorieLabel1: UILabel!
     @IBOutlet weak var slider1Value: UISlider!
@@ -88,16 +91,31 @@ class CalorieCounterViewController: UIViewController {
 
     
     
-    @IBAction func saveBtn(_ sender: Any) {}
+    @IBAction func saveBtn(_ sender: Any) {
+        if let calorie1 = (calorieLabel1.text), let calorie2 = calorieLabel2.text, let calorie3 = calorieLabel3.text, let calorie4 = calorieLabel4.text, let calorie5 = calorieLabel5.text, let calorie6 = calorieLabel6.text, let calorie7 = calorieLabel7.text, let calorie8 = calorieLabel8.text, let calorie9 = calorieLabel9.text, let calorie10 = calorieLabel10.text, let calorie11 = calorieLabel11.text
+        {
+            slidersArr.append(calorie1)
+            slidersArr.append(calorie2)
+            slidersArr.append(calorie3)
+            slidersArr.append(calorie4)
+            slidersArr.append(calorie5)
+            slidersArr.append(calorie6)
+            slidersArr.append(calorie7)
+            slidersArr.append(calorie8)
+            slidersArr.append(calorie9)
+            slidersArr.append(calorie10)
+            slidersArr.append(calorie11)
+        }
+    }
     
-    var labelsArr: [String] = []
-    var slidersArr: [Int32] = []
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print(slidersArr)
         // Do any additional setup after loading the view.
     }
     
@@ -125,7 +143,7 @@ class CalorieCounterViewController: UIViewController {
         let lbl10 = slider10Value.value
         let lbl11 = slider11Value.value
         totalCalories = Int(lbl1+lbl2+lbl3+lbl4+lbl5+lbl6+lbl7+lbl8+lbl9+lbl10+lbl11)
-        totalCals = totalCalories
+        
     }
 
 }
