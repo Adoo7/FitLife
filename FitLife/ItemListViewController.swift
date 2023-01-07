@@ -11,16 +11,19 @@ import UIKit
 struct Workout {
     var title:String
     var imageName: String
+    var duration: Int
+    var description: String
+    var difficulty: String
 }
 
 class ItemListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var workout: Workout?
     var data:[Workout] = [
-        Workout(title: "Bench Press", imageName: "FitLife_Logo"),
-        Workout(title: "Dumbell Curl", imageName: "FitLife_Logo"),
-        Workout(title: "Shoulder Press", imageName: "FitLife_Logo"),
-        Workout(title: "Leg Press", imageName: "FitLife_Logo")
+        Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
+        Workout(title: "Dumbell Curl", imageName: "FitLife_Logo", duration: 7, description: "Curling the dubell towards the chest and flattening the arm in repetition", difficulty: "Easy"),
+        Workout(title: "Shoulder Press", imageName: "FitLife_Logo", duration: 4, description: "Pressing the bar bell over the head while engaging the shoulder muscles", difficulty: "Hard"),
+        Workout(title: "Leg Press", imageName: "FitLife_Logo", duration: 7, description: "Press the weight away from the body using the leg press machine", difficulty: "Easy")
     ]
     
     @IBOutlet weak var itemTable: UITableView!

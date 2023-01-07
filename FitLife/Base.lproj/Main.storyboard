@@ -1116,7 +1116,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="v8i-cH-9AQ">
-                                                <rect key="frame" x="0.0" y="67" width="360" height="36"/>
+                                                <rect key="frame" x="0.0" y="65" width="360" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHd-Vo-Cl3">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
@@ -1135,7 +1135,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="143" translatesAutoresizingMaskIntoConstraints="NO" id="akR-IM-6E1">
-                                                <rect key="frame" x="0.0" y="150.5" width="360" height="50"/>
+                                                <rect key="frame" x="0.0" y="146" width="360" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX1-lH-4wV">
                                                         <rect key="frame" x="0.0" y="7" width="97" height="36"/>
@@ -1146,7 +1146,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5s-KZ-qjd">
                                                         <rect key="frame" x="240" y="0.0" width="120" height="50"/>
                                                         <subviews>
-                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-Kj-jSy">
+                                                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-Kj-jSy">
                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="120" id="aXg-70-4Gt"/>
@@ -1158,7 +1158,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E2W-b0-s64">
-                                                <rect key="frame" x="0.0" y="248" width="360" height="36"/>
+                                                <rect key="frame" x="0.0" y="241" width="360" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNq-AD-oa6">
                                                         <rect key="frame" x="0.0" y="0.0" width="106.5" height="36"/>
@@ -1181,7 +1181,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="wnI-iU-ivx">
-                                                <rect key="frame" x="0.0" y="331" width="360" height="36"/>
+                                                <rect key="frame" x="0.0" y="322" width="360" height="36"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK0-EW-bbj">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
@@ -1200,22 +1200,21 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-ET-6vU">
-                                                <rect key="frame" x="0.0" y="414.5" width="360" height="36"/>
+                                                <rect key="frame" x="0.0" y="403" width="360" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sF-Xk-L1g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
+                                                        <rect key="frame" x="0.0" y="7" width="120" height="36"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEV-IU-3pJ">
-                                                        <rect key="frame" x="240" y="1" width="120" height="34"/>
+                                                    <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0Z-6E-Vnh">
+                                                        <rect key="frame" x="240" y="0.0" width="120" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="KSn-Nk-hFF"/>
+                                                            <constraint firstAttribute="height" constant="50" id="3zG-ls-MCX"/>
+                                                            <constraint firstAttribute="width" constant="120" id="dwy-uB-Wks"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                    </pickerView>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-Au-TYI">
@@ -1267,6 +1266,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Kuo-I1-HOq"/>
                     <connections>
+                        <outlet property="descriptionField" destination="xbf-Ak-pP7" id="7cP-CD-Q1A"/>
+                        <outlet property="difficultyPicker" destination="d0Z-6E-Vnh" id="v8I-GO-85W"/>
                         <outlet property="durationSlider" destination="sUA-je-CU5" id="aUO-pG-kC7"/>
                         <outlet property="iconPicker" destination="JTE-Kj-jSy" id="APY-0R-HEq"/>
                         <outlet property="itemNameField" destination="mg2-lc-N2C" id="1vE-xH-KlY"/>

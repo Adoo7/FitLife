@@ -17,7 +17,13 @@ class AddItemViewController: UIViewController {
         "cardio",
         "weights",
         "calesthenics",
-        "swimming"
+        "swimming",
+        "FitLife_Logo"
+    ]
+    var difficultyPickerData: [String] = [
+        "Easy",
+        "Medium",
+        "Hard"
     ]
     
     required init?(coder: NSCoder, workout: Workout?) {
@@ -33,29 +39,34 @@ class AddItemViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.difficultyPicker.dataSource = self
+        self.difficultyPicker.delegate = self
         self.iconPicker.dataSource = self
         self.iconPicker.delegate = self
     }
     
     
+    @IBOutlet weak var difficultyPicker: UIPickerView!
     @IBOutlet weak var iconPicker: UIPickerView!
     @IBOutlet weak var itemNameField: UITextField!
-    @IBOutlet weak var durationField: UITextField!
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var durationSlider: UISlider!
     @IBAction func sliderMoved(_ sender: Any) {
         sliderLabel.text = String(Int(durationSlider.value))
     }
+    @IBOutlet weak var descriptionField: UITextField!
     
-
     
     @IBAction func saveButtonPressed(_ sender: Any) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let name = itemNameField.text
+        var iconString = pickerData[iconPicker.selectedRow(inComponent: 0)]
+        var difficulty = difficultyPickerData[difficultyPicker.selectedRow(inComponent: 0)]
+        
+        if let name = itemNameField.text, let description = descriptionField.text
         {
-            workout = Workout(title: name, imageName: "FitLife_Logo")
+            workout = Workout(title: name, imageName: iconString, duration: Int(durationSlider.value), description: description, difficulty: difficulty)
             print("prepared for segue\n \(workout!)")
         }
         
@@ -70,13 +81,22 @@ extension AddItemViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        if pickerView.tag == 1 {
+            return pickerData.count
+        } else {
+            return difficultyPickerData.count
+        }
+        
     }
     
 }
 
 extension AddItemViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        if pickerView.tag == 1 {
+            return pickerData[row]
+        } else {
+            return difficultyPickerData[row]
+        }
     }
 }
