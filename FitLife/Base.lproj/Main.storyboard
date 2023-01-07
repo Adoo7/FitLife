@@ -343,6 +343,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="Jfo-XO-sYg"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="ageSlider:" destination="Iqj-rA-mo3" eventType="valueChanged" id="Z6S-Ue-1TR"/>
+                                                        </connections>
                                                     </slider>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DW4-hf-uRg">
                                                         <rect key="frame" x="353" y="0.0" width="10" height="30"/>
@@ -376,6 +379,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="4vp-wP-oJM"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="weightSlider:" destination="Iqj-rA-mo3" eventType="valueChanged" id="374-jD-5JH"/>
+                                                        </connections>
                                                     </slider>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-0L-nn7">
                                                         <rect key="frame" x="353" y="0.0" width="10" height="30"/>
@@ -408,6 +414,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="200" id="aFl-v1-9Zu"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="heightSlider:" destination="Iqj-rA-mo3" eventType="valueChanged" id="bFy-XW-hSM"/>
+                                                        </connections>
                                                     </slider>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o9b-ww-Xid">
                                                         <rect key="frame" x="353" y="0.0" width="10" height="30"/>
@@ -539,9 +548,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="HJS-Rr-d8s">
-                                        <rect key="frame" x="144" y="48" width="120" height="80"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Koa-Kn-YPd">
                                         <rect key="frame" x="144.5" y="748" width="120" height="40"/>
                                         <constraints>
@@ -559,21 +565,23 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Profile_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-hG-WpF">
-                                        <rect key="frame" x="144" y="48" width="126" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-hG-WpF">
+                                        <rect key="frame" x="154" y="58" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="J1A-rt-fno"/>
+                                            <constraint firstAttribute="width" constant="100" id="i1o-eA-aLp"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="xfI-VD-L6q"/>
                                 <color key="backgroundColor" red="0.2470588235" green="0.67843137249999996" blue="0.69019607839999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="qux-0n-7xF" firstAttribute="leading" secondItem="xfI-VD-L6q" secondAttribute="leading" constant="23" id="8W8-Ws-5xh"/>
-                                    <constraint firstItem="HJS-Rr-d8s" firstAttribute="leading" secondItem="xfI-VD-L6q" secondAttribute="leading" constant="144" id="CTn-Zs-9a7"/>
-                                    <constraint firstItem="HJS-Rr-d8s" firstAttribute="top" secondItem="xfI-VD-L6q" secondAttribute="top" id="EK5-kg-fLz"/>
+                                    <constraint firstItem="7Cb-X4-1pu" firstAttribute="top" secondItem="aUf-hG-WpF" secondAttribute="bottom" constant="11" id="M7e-B3-L6t"/>
                                     <constraint firstItem="Koa-Kn-YPd" firstAttribute="centerX" secondItem="qux-0n-7xF" secondAttribute="centerX" id="NDL-QZ-VRl"/>
-                                    <constraint firstItem="qux-0n-7xF" firstAttribute="top" secondItem="HJS-Rr-d8s" secondAttribute="bottom" constant="41" id="RFk-h2-cZf"/>
+                                    <constraint firstItem="aUf-hG-WpF" firstAttribute="top" secondItem="xfI-VD-L6q" secondAttribute="top" constant="10" id="YF2-hw-AAo"/>
                                     <constraint firstItem="xfI-VD-L6q" firstAttribute="bottom" secondItem="Koa-Kn-YPd" secondAttribute="bottom" constant="50" id="bwy-hO-6WE"/>
-                                    <constraint firstItem="xfI-VD-L6q" firstAttribute="trailing" secondItem="HJS-Rr-d8s" secondAttribute="trailing" constant="144" id="wPe-w4-rLB"/>
+                                    <constraint firstItem="aUf-hG-WpF" firstAttribute="centerX" secondItem="Zzb-DX-qOC" secondAttribute="centerX" id="tXb-Zt-h7t"/>
                                     <constraint firstItem="xfI-VD-L6q" firstAttribute="trailing" secondItem="qux-0n-7xF" secondAttribute="trailing" constant="22" id="y18-nj-v6f"/>
                                 </constraints>
                             </view>
@@ -584,7 +592,15 @@
                     <tabBarItem key="tabBarItem" title="Item" id="TUS-BK-c1X"/>
                     <navigationItem key="navigationItem" id="hgF-30-XHj"/>
                     <connections>
-                        <outlet property="profilePic" destination="aUf-hG-WpF" id="lB9-9j-IDm"/>
+                        <outlet property="ageLabel" destination="HdM-St-w9u" id="h1r-NE-ta7"/>
+                        <outlet property="date" destination="FCd-r0-eWi" id="nAf-6C-BVP"/>
+                        <outlet property="genderPicker" destination="XA4-MQ-dcx" id="VkO-1o-yQP"/>
+                        <outlet property="heightLabel" destination="iHG-wS-nJ8" id="KdZ-4k-lW0"/>
+                        <outlet property="id" destination="7Cb-X4-1pu" id="bqC-D1-APY"/>
+                        <outlet property="imageUser" destination="aUf-hG-WpF" id="E4c-Rz-g0j"/>
+                        <outlet property="location" destination="0Hj-G4-O4n" id="A55-YI-xll"/>
+                        <outlet property="nameText" destination="Ui3-gq-xpO" id="gnG-TB-fHd"/>
+                        <outlet property="weightLabel" destination="QoY-Dh-w67" id="LVv-GD-JY6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0a-Oo-35v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -709,6 +725,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="Profile_Placeholder">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Iqj-rA-mo3" kind="presentation" id="Mkh-aH-FkO"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBw-xg-dBu">
                                                 <rect key="frame" x="50" y="40" width="41.5" height="20.5"/>
@@ -948,6 +967,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" image="Profile_Placeholder">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Iqj-rA-mo3" kind="presentation" id="V56-Kq-TAf"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwm-yf-Rl0">
                                                 <rect key="frame" x="50" y="40" width="41.5" height="20.5"/>
@@ -1240,7 +1262,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zaa-a9-ota"/>
+        <segue reference="Mkh-aH-FkO"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FitLife_Logo" width="50" height="52"/>

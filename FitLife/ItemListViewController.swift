@@ -13,7 +13,7 @@ struct Workout {
     var imageName: String
 }
 
-class ItemListViewController: UIViewController, UITableViewDataSource {
+class ItemListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var workout: Workout?
     var data:[Workout] = [
@@ -35,6 +35,21 @@ class ItemListViewController: UIViewController, UITableViewDataSource {
         updateUI()
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            data.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .middle)
+            tableView.endUpdates()
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -48,6 +63,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource {
         return cell
     }
 
+    
+    
     func updateUI(){
         itemTable.reloadData()
         print("updated data")
