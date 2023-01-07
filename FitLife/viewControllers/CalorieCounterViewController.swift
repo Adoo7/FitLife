@@ -14,8 +14,10 @@ extension Float {
 }
 class CalorieCounterViewController: UIViewController {
 
+
     
-    
+    var totalCalories = 5
+    var totalCals = 2
     
     @IBOutlet weak var calorieLabel1: UILabel!
     @IBOutlet weak var slider1Value: UISlider!
@@ -83,28 +85,13 @@ class CalorieCounterViewController: UIViewController {
         calorieLabel11.text = String(slider11Value.value.clean)
     }
     
+
     
     
+    @IBAction func saveBtn(_ sender: Any) {}
     
-    @IBAction func saveBtn(_ sender: Any) {
-        let lbl1 = slider1Value.value;
-        let lbl2 = slider2Value.value;
-        let lbl3 = slider3Value.value;
-        let lbl4 = slider4Value.value;
-        let lbl5 = slider5Value.value;
-        let lbl6 = slider6Value.value;
-        let lbl7 = slider7Value.value;
-        let lbl8 = slider8Value.value;
-        let lbl9 = slider9Value.value;
-        let lbl10 = slider10Value.value;
-        let lbl11 = slider11Value.value;
-        
-        let totalCalories = lbl1+lbl2+lbl3+lbl4+lbl5+lbl6+lbl7+lbl8+lbl9+lbl10+lbl11;
-        calorieLabel1.text = String(totalCalories);
-        
-    }
-    
-    
+    var labelsArr: [String] = []
+    var slidersArr: [Int32] = []
     
     
     
@@ -124,5 +111,21 @@ class CalorieCounterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let lbl1 = slider1Value.value
+        let lbl2 = slider2Value.value
+        let lbl3 = slider3Value.value
+        let lbl4 = slider4Value.value
+        let lbl5 = slider5Value.value
+        let lbl6 = slider6Value.value
+        let lbl7 = slider7Value.value
+        let lbl8 = slider8Value.value
+        let lbl9 = slider9Value.value
+        let lbl10 = slider10Value.value
+        let lbl11 = slider11Value.value
+        totalCalories = Int(lbl1+lbl2+lbl3+lbl4+lbl5+lbl6+lbl7+lbl8+lbl9+lbl10+lbl11)
+        totalCals = totalCalories
+    }
 
 }

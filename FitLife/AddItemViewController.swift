@@ -47,6 +47,8 @@ class AddItemViewController: UIViewController {
         sliderLabel.text = String(Int(durationSlider.value))
     }
     
+
+    
     @IBAction func saveButtonPressed(_ sender: Any) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
