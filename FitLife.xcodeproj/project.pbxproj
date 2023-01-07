@@ -10,6 +10,7 @@
 		41C43F9329646C8E00FBE6C6 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */; };
 		41C757F2295F3F67006285F3 /* CalorieCounterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */; };
 		41C757F4295F567A006285F3 /* ViewItemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */; };
+		60197079296489DB00D2F363 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60197078296489DB00D2F363 /* AddItemViewController.swift */; };
 		603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E450F295F5EF6007C548D /* ItemTableViewCell.swift */; };
 		608CB6792957BE870093B5F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB6782957BE870093B5F8 /* AppDelegate.swift */; };
 		608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608CB67A2957BE870093B5F8 /* SceneDelegate.swift */; };
@@ -22,7 +23,6 @@
 		60B8B9782961FBFA005F396B /* CalorieCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B9772961FBFA005F396B /* CalorieCounterViewController.swift */; };
 		60B8B97F2963205C005F396B /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B97E2963205C005F396B /* CategoryTableViewCell.swift */; };
 		60B8B98429632149005F396B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B98329632149005F396B /* ViewController.swift */; };
-		60B8B98629632528005F396B /* newItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B98529632528005F396B /* newItemViewController.swift */; };
 		60B8B98B296352AF005F396B /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B8B97C29632024005F396B /* CategoryTableViewController.swift */; };
 		60DD1FA0295DA392009E436F /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DD1F9F295DA392009E436F /* ItemListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +48,7 @@
 		41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieCounterStoryboard.storyboard; sourceTree = "<group>"; };
 		41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewItemStoryboard.storyboard; sourceTree = "<group>"; };
+		60197078296489DB00D2F363 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		603E450F295F5EF6007C548D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		608CB6752957BE870093B5F8 /* FitLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		608CB6782957BE870093B5F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		60B8B97C29632024005F396B /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = viewControllers/categoryView/CategoryTableViewController.swift; sourceTree = "<group>"; };
 		60B8B97E2963205C005F396B /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = viewControllers/categoryView/CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		60B8B98329632149005F396B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		60B8B98529632528005F396B /* newItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newItemViewController.swift; sourceTree = "<group>"; };
 		60DD1F9F295DA392009E436F /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,11 +122,11 @@
 				41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */,
 				41C757F3295F567A006285F3 /* ViewItemStoryboard.storyboard */,
 				608CB67E2957BE880093B5F8 /* Main.storyboard */,
+				60197078296489DB00D2F363 /* AddItemViewController.swift */,
 				41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */,
 				608CB6832957BE880093B5F8 /* LaunchScreen.storyboard */,
 				603E450F295F5EF6007C548D /* ItemTableViewCell.swift */,
 				60DD1F9F295DA392009E436F /* ItemListViewController.swift */,
-				60B8B98529632528005F396B /* newItemViewController.swift */,
 				60B8B97C29632024005F396B /* CategoryTableViewController.swift */,
 				60B8B97E2963205C005F396B /* CategoryTableViewCell.swift */,
 				60B8B98329632149005F396B /* ViewController.swift */,
@@ -327,8 +327,8 @@
 				60B8B98B296352AF005F396B /* CategoryTableViewController.swift in Sources */,
 				41C43F9329646C8E00FBE6C6 /* UserSettingsViewController.swift in Sources */,
 				60B8B9782961FBFA005F396B /* CalorieCounterViewController.swift in Sources */,
-				60B8B98629632528005F396B /* newItemViewController.swift in Sources */,
 				60B8B97F2963205C005F396B /* CategoryTableViewCell.swift in Sources */,
+				60197079296489DB00D2F363 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,13 +9,14 @@
 import UIKit
 
 struct Workout {
-    let title:String
-    let imageName: String
+    var title:String
+    var imageName: String
 }
 
 class ItemListViewController: UIViewController, UITableViewDataSource {
     
-    let data:[Workout] = [
+    var workout: Workout?
+    var data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo"),
         Workout(title: "Dumbell Curl", imageName: "FitLife_Logo"),
         Workout(title: "Shoulder Press", imageName: "FitLife_Logo"),
@@ -24,11 +25,14 @@ class ItemListViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var itemTable: UITableView!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         itemTable.dataSource = self
+        updateUI()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,15 +47,24 @@ class ItemListViewController: UIViewController, UITableViewDataSource {
         cell.iconImage.image = UIImage(named: workout.imageName)
         return cell
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI(){
+        itemTable.reloadData()
+        print("updated data")
+        print("rows: \(data.count)")
     }
-    */
-
+    
+    @IBAction func unwindToItemList(_ unwindSegue: UIStoryboardSegue) {
+        let sourceViewController = unwindSegue.source as? AddItemViewController
+        // Use data from the view controller which initiated the unwind segue
+        if let workout = sourceViewController?.workout {
+            data.append(workout)
+            print("added to array")
+        } else {
+            print("data is incomplete")
+        }
+            
+        updateUI()
+    }
+    
 }
