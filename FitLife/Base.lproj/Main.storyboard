@@ -143,7 +143,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cups Of Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxB-FG-Nz3">
-                                        <rect key="frame" x="163.33333333333334" y="23" width="189.33333333333329" height="24"/>
+                                        <rect key="frame" x="163.33333333333337" y="23" width="189.33333333333326" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="189.5" id="SyQ-DA-7Aw"/>
                                         </constraints>
@@ -152,7 +152,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="0 /8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlu-g6-f5c">
-                                        <rect key="frame" x="163.33333333333334" y="50" width="189.33333333333329" height="16"/>
+                                        <rect key="frame" x="163.33333333333337" y="50" width="189.33333333333326" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="189.5" id="aJi-T0-DwW"/>
                                         </constraints>
@@ -263,7 +263,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Zzb-DX-qOC">
-                                <rect key="frame" x="-2" y="-2" width="412" height="838"/>
+                                <rect key="frame" x="-3" y="-2" width="412" height="838"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qux-0n-7xF">
@@ -812,7 +812,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4l-g9-X9F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869.7674418604652" y="1543.7768240343348"/>
+            <point key="canvasLocation" x="2070" y="1546"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lV0-LR-VIa">
@@ -1209,7 +1209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCw-rO-LS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="1544"/>
+            <point key="canvasLocation" x="2967" y="1546"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
