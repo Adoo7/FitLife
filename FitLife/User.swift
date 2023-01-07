@@ -17,11 +17,10 @@ class User: Codable{
     var gender: String;
     var DOB: Date;
     var location: String;
-    var imageCode: Dictionary = [String:String]()
 
 //   var image: UIImage;
     
-    init(id: Int,name: String, age: Int, weight: Int, height: Int, gender: String, DOB: Date, location: String, imageCode: Dictionary<String, String>) {
+    init(id: Int,name: String, age: Int, weight: Int, height: Int, gender: String, DOB: Date, location: String){
         self.id = id;
         self.name = name
         self.age = age
@@ -30,8 +29,7 @@ class User: Codable{
         self.gender = gender
         self.DOB = DOB
         self.location = location
-        self.imageCode = imageCode
-//        self.image = image
+        //        self.image = image
     }
     static func save(_ user: User){
         let jsonEncoder = JSONEncoder()

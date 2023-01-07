@@ -28,7 +28,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     @IBAction func save(_ sender: Any) {
         first = genderPicker.selectedRow(inComponent: 0)
         if let name = nameText.text, let location = location.text{
-           let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location, imageCode: <#T##Dictionary<String, String>#>)
+           let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location)
             User.save(user)
 //            if let imageData = imageUser.image?.pngData() {
 //                let filename = getDocumentsDirectory().appendingPathComponent("copy.png")
