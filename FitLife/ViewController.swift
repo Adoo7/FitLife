@@ -33,6 +33,9 @@ class ViewController: UIViewController {
         waterCounter = waterCounter + 1;
         waterLabel.text = "\(waterCounter)/8";
     }
+    var calorieLabelsArr: [String]
+    var calorieSlidersArr: [Int32]
+    
     
 }
 
