@@ -108,6 +108,22 @@ class CalorieCounterViewController: UIViewController {
             slidersArr.append(calorie11)
             let userDefaults = UserDefaults.standard
             userDefaults.set(slidersArr, forKey: "sliderArray")
+            
+            let lbl1 = slider1Value.value
+            let lbl2 = slider2Value.value
+            let lbl3 = slider3Value.value
+            let lbl4 = slider4Value.value
+            let lbl5 = slider5Value.value
+            let lbl6 = slider6Value.value
+            let lbl7 = slider7Value.value
+            let lbl8 = slider8Value.value
+            let lbl9 = slider9Value.value
+            let lbl10 = slider10Value.value
+            let lbl11 = slider11Value.value
+            let totalCals = Int(lbl1+lbl2+lbl3+lbl4+lbl5+lbl6+lbl7+lbl8+lbl9+lbl10+lbl11)
+            print("SAVE BUTTON CALS")
+            print(totalCals)
+            userDefaults.set(totalCals, forKey: "totalCals")
         }
     }
     

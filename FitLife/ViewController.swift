@@ -16,14 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let userDefaults = UserDefaults.standard
+        let totalCals = userDefaults.string(forKey: "totalCals") as? String
+        print("VIEWCONTROLLER CALS")
+        print(totalCals)
+        caloriesLbl.text = totalCals
+        
     }
     @IBOutlet weak var waterLabel: UILabel!
     
     @IBAction func decreaseWater(_ sender: Any) {
         if(waterCounter == 0)
         {
-            let userDefaults = UserDefaults.standard
-            let strings = userDefaults.object(forKey: "sliderArray") as? [String]
+            
             
         }
         else
