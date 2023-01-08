@@ -30,11 +30,16 @@ class User: Codable{
         self.location = location
         self.image = image
     }
-    static func save(_ user: User){
+    static func save(_ user: User) -> Data{
         let jsonEncoder = JSONEncoder()
         let data = try! jsonEncoder.encode(user)
-        let string = String(data: data, encoding: .utf8)!
-        print(string)
-        print("Saved")
+       // let string = String(data: data, encoding: .utf8)!
+        return data
+    }
+    static func load(_ user: Data){
+        let jasonDecoder = JSONDecoder()
+        let data = try! jasonDecoder.decode(User.self ,from: user)
+        print("start data")
+        print(data.DOB)
     }
 }

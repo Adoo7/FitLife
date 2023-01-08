@@ -15,7 +15,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     var age: Int = 0
     var weight: Int = 0
     var height: Int = 0
-    var imgDict: Dictionary = [String:String]()
+    var output: Data?
     @IBOutlet weak var id: UILabel!
     var random = Int.random(in: 0..<1000)
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -32,10 +32,9 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         if let name = nameText.text, let location = location.text, let image = ingdata{
            let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location, image: image)
             
-            User.save(user)
-            
+            output = User.save(user)
         }
-        
+        User.load(output!)
     }
     @IBOutlet weak var date: UIDatePicker!
     @IBAction func ageSlider(_ sender: UISlider) {
@@ -147,8 +146,4 @@ extension UserSettingsViewController : UIImagePickerControllerDelegate ,UINaviga
     func convertInfoKey(_ input : UIImagePickerController.InfoKey) -> String{
         return input.rawValue
     }
-    
 }
-
-
-
