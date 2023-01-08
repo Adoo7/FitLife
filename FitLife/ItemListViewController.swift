@@ -19,6 +19,7 @@ struct Workout {
 class ItemListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var workout: Workout?
+    var selectedWorkout: Workout?
     var data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
         Workout(title: "Dumbell Curl", imageName: "FitLife_Logo", duration: 7, description: "Curling the dubell towards the chest and flattening the arm in repetition", difficulty: "Easy"),
@@ -35,6 +36,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
         itemTable.dataSource = self
+        itemTable.delegate = self
         updateUI()
     }
     
@@ -66,7 +68,11 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedWorkout = data[indexPath.row]
+        print("selected row \(indexPath.row)")
+        
+    }
     
     func updateUI(){
         itemTable.reloadData()
@@ -85,6 +91,20 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
             
         updateUI()
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//        let vc = segue.destination as? ItemDetailViewController
+        
+        if segue.identifier == "viewItem" {
+            
+            let vc = segue.destination as? ItemDetailViewController
+            vc?.workout = selectedWorkout
+            
+        }
+        
     }
     
 }
