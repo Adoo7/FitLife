@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     @IBAction func decreaseWater(_ sender: Any) {
         if(waterCounter == 0)
         {
+            let userDefaults = UserDefaults.standard
+            let strings = userDefaults.object(forKey: "sliderArray") as? [String]
             
         }
         else
@@ -48,7 +50,9 @@ class ViewController: UIViewController {
         if let changeText = (sourceViewController?.totalCalories), let arr1 = sourceViewController?.slidersArr
         {
             caloriesLbl.text = String(changeText)
-            sliderArray = arr1
+            
+            
+            
         }
         
         
@@ -58,6 +62,7 @@ class ViewController: UIViewController {
         let destinationVC = segue.destination as? CalorieCounterViewController
         destinationVC?.slidersArr = sliderArray
     }
+    
     
     
 }

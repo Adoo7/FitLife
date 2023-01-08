@@ -94,6 +94,7 @@ class CalorieCounterViewController: UIViewController {
     @IBAction func saveBtn(_ sender: Any) {
         if let calorie1 = (calorieLabel1.text), let calorie2 = calorieLabel2.text, let calorie3 = calorieLabel3.text, let calorie4 = calorieLabel4.text, let calorie5 = calorieLabel5.text, let calorie6 = calorieLabel6.text, let calorie7 = calorieLabel7.text, let calorie8 = calorieLabel8.text, let calorie9 = calorieLabel9.text, let calorie10 = calorieLabel10.text, let calorie11 = calorieLabel11.text
         {
+            
             slidersArr.append(calorie1)
             slidersArr.append(calorie2)
             slidersArr.append(calorie3)
@@ -105,6 +106,8 @@ class CalorieCounterViewController: UIViewController {
             slidersArr.append(calorie9)
             slidersArr.append(calorie10)
             slidersArr.append(calorie11)
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(slidersArr, forKey: "sliderArray")
         }
     }
     
@@ -115,8 +118,34 @@ class CalorieCounterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(slidersArr)
         // Do any additional setup after loading the view.
+        let userDefaults = UserDefaults.standard
+        let strings = userDefaults.object(forKey: "sliderArray") as? [String]
+        
+        calorieLabel1.text = strings![0]
+        calorieLabel2.text = strings![1]
+        calorieLabel3.text = strings![2]
+        calorieLabel4.text = strings![3]
+        calorieLabel5.text = strings![4]
+        calorieLabel6.text = strings![5]
+        calorieLabel7.text = strings![6]
+        calorieLabel8.text = strings![7]
+        calorieLabel9.text = strings![8]
+        calorieLabel10.text = strings![9]
+        calorieLabel11.text = strings![10]
+        
+        slider1Value.value = Float(strings![0])!
+        slider2Value.value = Float(strings![1])!
+        slider3Value.value = Float(strings![2])!
+        slider4Value.value = Float(strings![3])!
+        slider5Value.value = Float(strings![4])!
+        slider6Value.value = Float(strings![5])!
+        slider7Value.value = Float(strings![6])!
+        slider8Value.value = Float(strings![7])!
+        slider9Value.value = Float(strings![8])!
+        slider10Value.value = Float(strings![9])!
+        slider11Value.value = Float(strings![10])!
+        
     }
     
 
@@ -129,6 +158,7 @@ class CalorieCounterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let lbl1 = slider1Value.value
@@ -143,6 +173,7 @@ class CalorieCounterViewController: UIViewController {
         let lbl10 = slider10Value.value
         let lbl11 = slider11Value.value
         totalCalories = Int(lbl1+lbl2+lbl3+lbl4+lbl5+lbl6+lbl7+lbl8+lbl9+lbl10+lbl11)
+        
         
     }
 
