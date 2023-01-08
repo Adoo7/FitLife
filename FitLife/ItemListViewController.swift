@@ -20,6 +20,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var workout: Workout?
     var selectedWorkout: Workout?
+    var isEditing: Bool = false
+    
     var data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
         Workout(title: "Dumbell Curl", imageName: "FitLife_Logo", duration: 7, description: "Curling the dubell towards the chest and flattening the arm in repetition", difficulty: "Easy"),
@@ -40,10 +42,12 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         updateUI()
     }
     
+    //1.0 to be able to delete cells
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
+    //1.1
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -55,10 +59,20 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
+    //2.0 to be able to edit cells
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //2.1 adding edit functionality
+    
+    
+    //giving the amount of rows in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
+    //setting the UI of each cell in table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let workout = data[indexPath.row]
@@ -68,16 +82,17 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
+    //selecting cell function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedWorkout = data[indexPath.row]
         print("selected row \(indexPath.row)")
         
     }
     
+    // to update the table data for new objects
     func updateUI(){
         itemTable.reloadData()
-        print("updated data")
-        print("rows: \(data.count)")
+        print("updated data, rows: \(data.count)")
     }
     
     @IBAction func unwindToItemList(_ unwindSegue: UIStoryboardSegue) {
@@ -87,7 +102,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
             data.append(workout)
             print("added to array")
         } else {
-            print("data is incomplete")
+            print("operation cancelled")
         }
             
         updateUI()
@@ -102,6 +117,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let vc = segue.destination as? ItemDetailViewController
             vc?.workout = selectedWorkout
+            
+        } else if segue.identifier == "editItem"{
             
         }
         
