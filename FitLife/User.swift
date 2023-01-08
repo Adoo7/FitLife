@@ -36,10 +36,10 @@ class User: Codable{
        // let string = String(data: data, encoding: .utf8)!
         return data
     }
-    static func load(_ user: Data){
+    static func load(_ user: Data) -> User{
         let jasonDecoder = JSONDecoder()
         let data = try! jasonDecoder.decode(User.self ,from: user)
-        print("start data")
-        print(data.DOB)
+        return data
     }
+    
 }
