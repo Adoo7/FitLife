@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "data"
-            landmarkType = "24">
+            landmarkName = "ItemListViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "862BA3AF-9D9C-4D3E-9F2A-447C43B7A549 - c5139d49645b7924"
@@ -124,8 +124,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "itemTable"
-            landmarkType = "24">
+            landmarkName = "ItemListViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

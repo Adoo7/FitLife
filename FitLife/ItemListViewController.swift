@@ -34,7 +34,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("view loaded")
+        
         // Do any additional setup after loading the view.
         itemTable.dataSource = self
         itemTable.delegate = self

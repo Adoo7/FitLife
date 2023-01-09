@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var weight: UILabel!
     @IBOutlet weak var userName: UILabel!
     
+    @IBOutlet weak var bmiLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
