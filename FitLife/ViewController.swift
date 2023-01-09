@@ -19,6 +19,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        if UserDefaults.standard.object(forKey: "name") != nil {
+            userName.text = UserDefaults.standard.string(forKey: "name")
+        }
+        if UserDefaults.standard.object(forKey: "weight") != nil {
+            let weights  = String(UserDefaults.standard.integer(forKey: "weight"))
+            weight.text = weights + "kg"
+        }
+        if UserDefaults.standard.object(forKey: "bmi") != nil {
+            let bmi = UserDefaults.standard.float(forKey: "bmi")
+            if bmi < 18.5{
+                bmiLabel.text = "Under weight " + String(format: "%.1f", bmi)
+            }else if bmi >= 18.5 && bmi <= 24.9{
+                bmiLabel.text = "Healthy weight " + String(format: "%.1f", bmi)
+            }else if bmi >= 25.0 && bmi <= 29.9{
+                bmiLabel.text = "Overweight " + String(format: "%.1f", bmi)
+            }else if bmi >= 30{
+                bmiLabel.text = "Obese " + String(format: "%.1f", bmi)
+            }
+        }
+        
         let userDefaults = UserDefaults.standard
         let totalCals = userDefaults.string(forKey: "totalCals") as? String
         print("VIEWCONTROLLER CALS")
@@ -62,10 +82,24 @@ class ViewController: UIViewController {
             userName.text = name
             
             let weights = change.weight
-            weight.text = String(weights)
+            weight.text = String(weights)+"kg"
 
             profilepic.image = UIImage(data: change.image)
             
+            let bmi = Float(change.weight) / pow(Float(change.height)/100, 2)
+            
+            UserDefaults.standard.set(bmi, forKey: "bmi")
+            
+            if bmi < 18.5{
+                bmiLabel.text = "Under weight " + String(format: "%.1f", bmi)
+            }else if bmi >= 18.5 && bmi <= 24.9{
+                bmiLabel.text = "Healthy weight " + String(format: "%.1f", bmi)
+            }else if bmi >= 25.0 && bmi <= 29.9{
+                bmiLabel.text = "Overweight " + String(format: "%.1f", bmi)
+            }else if bmi >= 30{
+                bmiLabel.text = "Obese " + String(format: "%.1f", bmi)
+            }
+
         }
         
         // Use data from the view controller which initiated the unwind segue
@@ -73,7 +107,6 @@ class ViewController: UIViewController {
         {
             caloriesLbl.text = String(changeText)
         }
-        
         
     }
     
