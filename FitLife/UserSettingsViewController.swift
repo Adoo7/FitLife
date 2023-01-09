@@ -62,7 +62,38 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         
         genderPicker.dataSource = self
         genderPicker.delegate = self
-        
+        if UserDefaults.standard.object(forKey: "id") != nil {
+            let ids  = String(UserDefaults.standard.integer(forKey: "id"))
+            id.text = "User id: " + ids
+        }
+        if UserDefaults.standard.object(forKey: "name") != nil {
+            nameText.text = UserDefaults.standard.string(forKey: "name")
+        }
+        if UserDefaults.standard.object(forKey: "age") != nil {
+            let ages  = String(UserDefaults.standard.integer(forKey: "age"))
+            ageLabel.text = "Age " + ages
+        }
+        if UserDefaults.standard.object(forKey: "weight") != nil {
+            let weights  = String(UserDefaults.standard.integer(forKey: "weight"))
+            weightLabel.text = "Weight " + weights
+        }
+        if UserDefaults.standard.object(forKey: "height") != nil {
+            let heights  = String(UserDefaults.standard.integer(forKey: "height"))
+            heightLabel.text = "Height " + heights
+        }
+        if UserDefaults.standard.object(forKey: "location") != nil {
+            location.text = UserDefaults.standard.string(forKey: "location")
+        }
+        if UserDefaults.standard.object(forKey: "image") != nil {
+            imageUser.image = UIImage(data: UserDefaults.standard.data(forKey: "image")!)
+        }
+        if UserDefaults.standard.object(forKey: "DOB") != nil {
+            let dates = UserDefaults.standard.object(forKey: "DOB") as! Date
+            date.date = dates
+        }
+        if UserDefaults.standard.object(forKey: "gender") != nil{
+            print("not done")
+        }
     
         // Do any additional setup after loading the view.
     }
@@ -72,11 +103,23 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         
         if let name = nameText.text, let location = location.text, let image = ingdata{
            let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location, image: image)
-            
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(user.id, forKey: "id")
+            userDefaults.set(user.name, forKey: "name")
+            userDefaults.set(user.age, forKey: "age")
+            userDefaults.set(user.weight, forKey: "weight")
+            userDefaults.set(user.height, forKey: "height")
+            userDefaults.set(user.gender, forKey: "gender")
+            userDefaults.set(user.DOB, forKey: "DOB")
+            userDefaults.set(user.location, forKey: "location")
+            userDefaults.set(user.image, forKey: "image")
             iutput = User.save(user)
+            
+            
         }
         output = User.load(iutput!)
         going = output
+        
     }
     
     func getDocumentsDirectory() -> URL{
