@@ -15,7 +15,9 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     var age: Int = 0
     var weight: Int = 0
     var height: Int = 0
-    var imgDict: Dictionary = [String:String]()
+    var iutput: Data?
+    var output: User?
+    var going: User?
     @IBOutlet weak var id: UILabel!
     var random = Int.random(in: 0..<1000)
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -26,16 +28,6 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var imageUser: UIImageView!
     
     @IBAction func save(_ sender: Any) {
-        first = genderPicker.selectedRow(inComponent: 0)
-        let ingdata = imageUser.image?.pngData()
-        
-        if let name = nameText.text, let location = location.text, let image = ingdata{
-           let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location, image: image)
-            
-            User.save(user)
-            
-        }
-        
     }
     @IBOutlet weak var date: UIDatePicker!
     @IBAction func ageSlider(_ sender: UISlider) {
@@ -74,6 +66,18 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        first = genderPicker.selectedRow(inComponent: 0)
+        let ingdata = imageUser.image?.pngData()
+        
+        if let name = nameText.text, let location = location.text, let image = ingdata{
+           let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location, image: image)
+            
+            iutput = User.save(user)
+        }
+        output = User.load(iutput!)
+        going = output
+    }
     
     func getDocumentsDirectory() -> URL{
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -93,8 +97,6 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             actionSheet()
         }
     }
-    
-    
     func actionSheet(){
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
@@ -147,8 +149,4 @@ extension UserSettingsViewController : UIImagePickerControllerDelegate ,UINaviga
     func convertInfoKey(_ input : UIImagePickerController.InfoKey) -> String{
         return input.rawValue
     }
-    
 }
-
-
-
