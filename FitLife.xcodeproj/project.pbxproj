@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F4527CE296C74B500AC5FBD /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4527CD296C74B500AC5FBD /* AddCategoryViewController.swift */; };
 		41780118296811D20042BB86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41780117296811D20042BB86 /* User.swift */; };
 		41C43F9329646C8E00FBE6C6 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */; };
 		41C757F2295F3F67006285F3 /* CalorieCounterStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F4527CD296C74B500AC5FBD /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		41780117296811D20042BB86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		41C43F9229646C8E00FBE6C6 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		41C757F1295F3F67006285F3 /* CalorieCounterStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieCounterStoryboard.storyboard; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				608CB6832957BE880093B5F8 /* LaunchScreen.storyboard */,
 				603E450F295F5EF6007C548D /* ItemTableViewCell.swift */,
 				60DD1F9F295DA392009E436F /* ItemListViewController.swift */,
+				3F4527CD296C74B500AC5FBD /* AddCategoryViewController.swift */,
 				60B8B97C29632024005F396B /* CategoryTableViewController.swift */,
 				60B8B97E2963205C005F396B /* CategoryTableViewCell.swift */,
 				60B8B98329632149005F396B /* ViewController.swift */,
@@ -331,6 +334,7 @@
 				608CB67B2957BE870093B5F8 /* SceneDelegate.swift in Sources */,
 				60B8B98429632149005F396B /* ViewController.swift in Sources */,
 				603E4510295F5EF6007C548D /* ItemTableViewCell.swift in Sources */,
+				3F4527CE296C74B500AC5FBD /* AddCategoryViewController.swift in Sources */,
 				60B8B98B296352AF005F396B /* CategoryTableViewController.swift in Sources */,
 				41C43F9329646C8E00FBE6C6 /* UserSettingsViewController.swift in Sources */,
 				60B8B9782961FBFA005F396B /* CalorieCounterViewController.swift in Sources */,

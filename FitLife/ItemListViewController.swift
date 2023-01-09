@@ -86,7 +86,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         return swipe
         
     }
-    
+   
     //giving the amount of rows in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
