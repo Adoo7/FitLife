@@ -54,7 +54,7 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
             print("edit")
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddItemViewController") as! AddCategoryViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddCategoryViewController") as! AddCategoryViewController
             vc.category = self.list[indexPath.row]
             self.present(vc, animated: true)
             completionHandler(true)
@@ -94,6 +94,23 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         
         update()
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+//        let vc = segue.destination as? ItemDetailViewController
+        
+        if segue.identifier == "viewItem" {
+            
+            let vc = segue.destination as? AddCategoryViewController
+            vc?.category = cat
+            
+        } else if segue.identifier == "editItem"{
+            
+            let vc = segue.destination as? AddCategoryViewController
+            vc?.category = cat
+            
+        }
+        
+    }
 }
+
 

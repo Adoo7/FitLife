@@ -16,6 +16,10 @@ class AddCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let passedCategory = category {
+            categoryName.text = passedCategory.title
+        }
 
         // Do any additional setup after loading the view.
     }
