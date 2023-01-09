@@ -37,6 +37,9 @@ class ViewController: UIViewController {
             }else if bmi >= 30{
                 bmiLabel.text = "Obese " + String(format: "%.1f", bmi)
             }
+            if UserDefaults.standard.object(forKey: "image") != nil {
+                profilepic.image = UIImage(data: UserDefaults.standard.data(forKey: "image")!)
+            }
         }
         
         let userDefaults = UserDefaults.standard

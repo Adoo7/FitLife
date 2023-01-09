@@ -84,6 +84,16 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         if UserDefaults.standard.object(forKey: "location") != nil {
             location.text = UserDefaults.standard.string(forKey: "location")
         }
+        if UserDefaults.standard.object(forKey: "image") != nil {
+            imageUser.image = UIImage(data: UserDefaults.standard.data(forKey: "image")!)
+        }
+        if UserDefaults.standard.object(forKey: "DOB") != nil {
+            let dates = UserDefaults.standard.object(forKey: "DOB") as! Date
+            date.date = dates
+        }
+        if UserDefaults.standard.object(forKey: "gender"){
+            print("not done")
+        }
     
         // Do any additional setup after loading the view.
     }
@@ -102,7 +112,10 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             userDefaults.set(user.gender, forKey: "gender")
             userDefaults.set(user.DOB, forKey: "DOB")
             userDefaults.set(user.location, forKey: "location")
+            userDefaults.set(user.image, forKey: "image")
             iutput = User.save(user)
+            
+            
         }
         output = User.load(iutput!)
         going = output
