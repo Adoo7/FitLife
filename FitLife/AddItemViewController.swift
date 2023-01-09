@@ -13,6 +13,7 @@ class AddItemViewController: UIViewController {
     var workoutName: String?
     var imageString: String?
     var iconTitle: String?
+    var indexOfWorkout: Int = 0
     var pickerData: [String] = [
         "cardio",
         "weights",
@@ -66,7 +67,6 @@ class AddItemViewController: UIViewController {
     }
     @IBOutlet weak var descriptionField: UITextField!
     
-    
     @IBAction func saveButtonPressed(_ sender: Any) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,6 +91,7 @@ extension AddItemViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
         if pickerView.tag == 1 {
             return pickerData.count
         } else {

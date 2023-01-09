@@ -20,6 +20,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var workout: Workout?
     var selectedWorkout: Workout?
+    var checkIfEdit = false
     
     var data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
@@ -66,6 +67,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
             print("edit")
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
             vc.workout = self.data[indexPath.row]
+            vc.indexOfWorkout = indexPath.row
+            self.checkIfEdit = true
             self.present(vc, animated: true)
             completionHandler(true)
             
@@ -116,8 +119,19 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         let sourceViewController = unwindSegue.source as? AddItemViewController
         // Use data from the view controller which initiated the unwind segue
         if let workout = sourceViewController?.workout {
-            data.append(workout)
-            print("added to array")
+            if checkIfEdit == false {
+                print("edit is false")
+                data.append(workout)
+                print("added to array")
+            } else {
+                print("edit is true")
+                data[sourceViewController!.indexOfWorkout] = workout
+                print("item has been replaced")
+                checkIfEdit = false
+            }
+            
+//            UserDefaults.standard.set(data, forKey: "WorkoutArray")
+            
         } else {
             print("operation cancelled")
         }
