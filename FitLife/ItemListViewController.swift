@@ -20,7 +20,6 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var workout: Workout?
     var selectedWorkout: Workout?
-    var isEditing: Bool = false
     
     var data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
