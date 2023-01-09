@@ -68,7 +68,7 @@ class ViewController: UIViewController {
         }
         
         // Use data from the view controller which initiated the unwind segue
-        if let changeText = (sourceViewController?.totalCals)
+        if let changeText = (sourceViewController?.totalCalories)
         {
             caloriesLbl.text = String(changeText)
         }
