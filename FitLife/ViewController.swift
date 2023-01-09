@@ -9,11 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
     var waterCounter = 0;
+    var sliderArray: [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let userDefaults = UserDefaults.standard
+        let totalCals = userDefaults.string(forKey: "totalCals") as? String
+        print("VIEWCONTROLLER CALS")
+        print(totalCals)
+        caloriesLbl.text = totalCals
         
     }
     @IBOutlet weak var waterLabel: UILabel!
@@ -21,6 +28,7 @@ class ViewController: UIViewController {
     @IBAction func decreaseWater(_ sender: Any) {
         if(waterCounter == 0)
         {
+            
             
         }
         else
@@ -36,7 +44,7 @@ class ViewController: UIViewController {
         waterLabel.text = "\(waterCounter)/8";
     }
     var calorieLabelsArr: [String] = []
-    var calorieSlidersArr: [Int32] = []
+    var calorieSlidersArr: [String] = []
     
     
     @IBOutlet weak var caloriesLbl: UILabel!
@@ -44,11 +52,22 @@ class ViewController: UIViewController {
     @IBAction func unwindToHomePage(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as? CalorieCounterViewController
         // Use data from the view controller which initiated the unwind segue
-        if let changeText = (sourceViewController?.totalCals)
+        if let changeText = (sourceViewController?.totalCalories), let arr1 = sourceViewController?.slidersArr
         {
             caloriesLbl.text = String(changeText)
+            
+            
+            
         }
+        
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as? CalorieCounterViewController
+        destinationVC?.slidersArr = sliderArray
+    }
+    
     
     
 }
