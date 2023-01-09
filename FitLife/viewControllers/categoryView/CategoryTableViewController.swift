@@ -14,6 +14,9 @@ struct Category {
 class CategoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var cat: Category?
+    var checkIfEdit = false
+    
+    var indexOfCategory = 0
     
     var list: [Category] = [
         Category(title: "Bodybuilding", image: "Bodybuilding_Image"),
@@ -54,6 +57,8 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
             print("edit")
+            self.indexOfCategory = indexPath.row
+            self.checkIfEdit = true
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddCategoryViewController") as! AddCategoryViewController
             vc.category = self.list[indexPath.row]
             self.present(vc, animated: true)
@@ -86,7 +91,16 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         let sourceViewController = unwindSegue.source as? AddCategoryViewController
         // Use data from the view controller which initiated the unwind segue
         if let category = sourceViewController?.category {
-            list.append(category)
+            if checkIfEdit == false {
+                print("edit is false")
+                list.append(category)
+                print("added to array")
+            } else {
+                print("edit is true")
+                list[indexOfCategory] = category
+                print("item has been replaced")
+                checkIfEdit = false
+            }
             print("added to array")
         } else {
             print("operation cancelled")
