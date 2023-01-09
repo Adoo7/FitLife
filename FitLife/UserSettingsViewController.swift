@@ -91,7 +91,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             let dates = UserDefaults.standard.object(forKey: "DOB") as! Date
             date.date = dates
         }
-        if UserDefaults.standard.object(forKey: "gender"){
+        if UserDefaults.standard.object(forKey: "gender") != nil{
             print("not done")
         }
     
