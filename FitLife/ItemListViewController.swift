@@ -59,13 +59,30 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
-    //2.0 to be able to edit cells
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    //2.1 adding edit/delete functionality
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+            print("edit")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
+            vc.workout = self.data[indexPath.row]
+            self.present(vc, animated: true)
+            completionHandler(true)
+            
+        }
+        let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
+            print("delete")
+            self.data.remove(at: indexPath.row)
+            tableView.reloadData()
+            completionHandler(true)
+        }
+        
+        delete.backgroundColor = .red
+        
+        let swipe = UISwipeActionsConfiguration(actions: [edit, delete])
+        return swipe
+        
     }
-    
-    //2.1 adding edit functionality
-    
     
     //giving the amount of rows in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,6 +136,9 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
             vc?.workout = selectedWorkout
             
         } else if segue.identifier == "editItem"{
+            
+            let vc = segue.destination as? ItemDetailViewController
+            vc?.workout = selectedWorkout
             
         }
         

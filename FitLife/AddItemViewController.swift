@@ -38,6 +38,16 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let passedWorkout = workout {
+            itemNameField.text = passedWorkout.title
+            durationSlider.value =  Float(passedWorkout.duration)
+            descriptionField.text = passedWorkout.description
+            sliderLabel.text = String(passedWorkout.duration)
+            
+//            pickerData[iconPicker.selectedRow(inComponent: 0)] = passedWorkout.imageName
+//            difficultyPickerData[difficultyPicker.selectedRow(inComponent: 0)] = passedWorkout.difficulty
+        }
+            
         // Do any additional setup after loading the view.
         self.difficultyPicker.dataSource = self
         self.difficultyPicker.delegate = self
@@ -61,8 +71,8 @@ class AddItemViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        var iconString = pickerData[iconPicker.selectedRow(inComponent: 0)]
-        var difficulty = difficultyPickerData[difficultyPicker.selectedRow(inComponent: 0)]
+        let iconString = pickerData[iconPicker.selectedRow(inComponent: 0)]
+        let difficulty = difficultyPickerData[difficultyPicker.selectedRow(inComponent: 0)]
         
         if let name = itemNameField.text, let description = descriptionField.text
         {
