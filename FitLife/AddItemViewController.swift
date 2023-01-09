@@ -77,7 +77,7 @@ class AddItemViewController: UIViewController {
         if let name = itemNameField.text, let description = descriptionField.text
         {
             workout = Workout(title: name, imageName: iconString, duration: Int(durationSlider.value), description: description, difficulty: difficulty)
-            print("prepared for segue\n \(workout!)")
+            print("prepared for segue\n workout passed: \(workout!)")
         }
         
     }

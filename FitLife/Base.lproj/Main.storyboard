@@ -354,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Zzb-DX-qOC">
-                                <rect key="frame" x="-12" y="-16" width="407" height="838"/>
+                                <rect key="frame" x="-12" y="-16" width="408" height="838"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qux-0n-7xF">
@@ -1397,7 +1397,7 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                                 <connections>
                                                     <action selector="saveButtonPressed:" destination="P1k-YE-7fD" eventType="touchUpInside" id="fWn-er-hlb"/>
-                                                    <segue destination="IVO-QG-y27" kind="unwind" unwindAction="unwindToItemList:" id="NgG-1V-TUV"/>
+                                                    <segue destination="IVO-QG-y27" kind="unwind" identifier="addingItem" unwindAction="unwindToItemList:" id="NgG-1V-TUV"/>
                                                 </connections>
                                             </button>
                                         </subviews>

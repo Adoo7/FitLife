@@ -121,7 +121,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         } else {
             print("operation cancelled")
         }
-            
+        
         updateUI()
     }
     
