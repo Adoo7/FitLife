@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FitLife/UserSettingsViewController.swift"
@@ -18,6 +18,98 @@
             endingLineNumber = "30"
             landmarkName = "UserSettingsViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B - d3e4fb3f71be9736"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.UserSettingsViewController.ageSliderValue.getter : Swift.Optional&lt;__C.UISlider&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/FitLife/FitLife/UserSettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B - 1089e8322228273a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.UserSettingsViewController.ageSliderValue.setter : Swift.Optional&lt;__C.UISlider&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/FitLife/FitLife/UserSettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B - eb226a0025072b2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.UserSettingsViewController.ageSliderValue.modify : Swift.Optional&lt;__C.UISlider&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/FitLife/FitLife/UserSettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B - ec5035b51b97f0e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.UserSettingsViewController.ageSliderValue.modify : Swift.Optional&lt;__C.UISlider&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/FitLife/FitLife/UserSettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B - 52cf586193d176ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.UserSettingsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; FitLife.UserSettingsViewController"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/FitLife/FitLife/UserSettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "864">
+               </Location>
+               <Location
+                  uuid = "1CD4A328-25A5-4126-9E77-DAEFF876F72B - 76746130e63b8cdd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FitLife.UserSettingsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;FitLife.UserSettingsViewController&gt;"
+                  moduleName = "FitLife"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ali/Desktop/FitLife/FitLife/UserSettingsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "806">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
