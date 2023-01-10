@@ -102,6 +102,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         }
         if UserDefaults.standard.object(forKey: "gender") != nil{
             genderPicker.selectRow(UserDefaults.standard.integer(forKey: "gender"), inComponent: 0, animated: true)
+            first = UserDefaults.standard.integer(forKey: "gender")
         }
     
         // Do any additional setup after loading the view.
