@@ -21,6 +21,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     var workout: Workout?
     var selectedWorkout: Workout?
     var checkIfEdit = false
+    var category: Category?
     
     var data:[Workout] = [
         Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
@@ -36,6 +37,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view loaded")
+        
+        
         
         // Do any additional setup after loading the view.
         itemTable.dataSource = self

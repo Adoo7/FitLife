@@ -9,6 +9,7 @@ import UIKit
 struct Category {
     let title: String
     let image: String
+//    let workouts: [Workout]
 }
 
 class CategoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
