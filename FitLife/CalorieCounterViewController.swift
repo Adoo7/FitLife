@@ -162,6 +162,9 @@ class CalorieCounterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //dismiss keyboard when tapping away
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
         
         // Do any additional setup after loading the view.
         let userDefaults = UserDefaults.standard

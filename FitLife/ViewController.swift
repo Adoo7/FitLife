@@ -19,6 +19,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //dismiss keyboard when tapping away
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
+        
         if UserDefaults.standard.object(forKey: "name") != nil {
             userName.text = UserDefaults.standard.string(forKey: "name")
         }

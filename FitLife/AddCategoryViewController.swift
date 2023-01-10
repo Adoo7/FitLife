@@ -17,6 +17,10 @@ class AddCategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //dismiss keyboard
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
+        
         if let passedCategory = category {
             categoryName.text = passedCategory.title
         }

@@ -38,6 +38,10 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //dismiss keyboard functionality
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
+        
         if let passedWorkout = workout {
             itemNameField.text = passedWorkout.title
             durationSlider.value =  Float(passedWorkout.duration)

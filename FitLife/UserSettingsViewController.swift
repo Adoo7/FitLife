@@ -59,6 +59,10 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         super.viewDidLoad()
         id.text = "User id: " + String(random)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onClickSelectedImage))
+
+        //dismiss keyboard functionality
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+
         
         imageUser.addGestureRecognizer(tapGesture)
         imageUser.isUserInteractionEnabled = true
