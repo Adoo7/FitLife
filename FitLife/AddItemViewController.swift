@@ -18,8 +18,7 @@ class AddItemViewController: UIViewController {
         "cardio",
         "weights",
         "calesthenics",
-        "swimming",
-        "FitLife_Logo"
+        "swimming"
     ]
     var difficultyPickerData: [String] = [
         "Easy",

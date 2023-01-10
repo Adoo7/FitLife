@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Category {
+class Category:Codable {
     internal init(title: String, image: String, workouts: [Workout]) {
         self.title = title
         self.image = image
@@ -23,7 +23,6 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     
     var cat: Category?
     var checkIfEdit = false
-    
     var indexOfCategory = 0
     
     var workoutList:[Workout] = [
@@ -40,6 +39,12 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         Category(title: "Yoga", image: "Yoga_Image", workouts: [])
     ]
     
+    var presetCategories: [Category] = [
+        Category(title: "Bodybuilding", image: "Bodybuilding_Image", workouts: []),
+        Category(title: "Crossfit", image: "Crossfit_Image", workouts: []),
+        Category(title: "HIIT", image: "HIIT_Image", workouts: []),
+        Category(title: "Yoga", image: "Yoga_Image", workouts: [])
+    ]
     
    
     @IBOutlet weak var categoryTable: UITableView!
@@ -47,13 +52,15 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         var i = 0
         for workingCategory in list {
             i += 1
             workingCategory.workouts = workoutList
         }
-        if let categories = UserDefaults.standard.object(forKey: "allCategories") {
-            list = categories as! [Category]
+        if let categories = UserDefaults.standard.object(forKey: "allCategories") as? Data, let data = try? JSONDecoder().decode([Category].self, from: categories) {
+                list = data
         }
         
             
@@ -110,10 +117,12 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cat = list[indexPath.row]
+        indexOfCategory = indexPath.row
         print("selected row \(indexPath.row)")
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
         vc.category = cat
         vc.allCategories = list
+        vc.categoryIndex = indexOfCategory
         self.present(vc, animated: true)
 
         
@@ -124,15 +133,25 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     @IBAction func unwindToCategoryList(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as? AddCategoryViewController
+        
         // Use data from the view controller which initiated the unwind segue
         if let category = sourceViewController?.category {
             if checkIfEdit == false {
+                //appending item to array and saving data
                 print("edit is false")
                 list.append(category)
-                print("added to array")
+                if let encoded = try? JSONEncoder().encode(list) {
+                    UserDefaults.standard.set(encoded, forKey: "allCategories")
+                }
+                print("added to array and saved to user defaults")
+                
             } else {
+                //replacing item in index and saving
                 print("edit is true")
                 list[indexOfCategory] = category
+                if let encoded = try? JSONEncoder().encode(list) {
+                    UserDefaults.standard.set(encoded, forKey: "allCategories")
+                }
                 print("item has been replaced")
                 checkIfEdit = false
             }

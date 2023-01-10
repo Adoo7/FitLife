@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Workout {
+struct Workout:Codable {
     var title:String
     var imageName: String
     var duration: Int
@@ -21,6 +21,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     var workout: Workout?
     var selectedWorkout: Workout?
     var checkIfEdit = false
+    var categoryIndex = 0
     var category: Category?
     var allCategories: [Category]?
     
@@ -31,7 +32,9 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print("view loaded")
+        
         if let categoryPassed = category {
             print("loaded category: \(categoryPassed)")
         }
@@ -123,19 +126,21 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     // to update the table data for new objects
     func updateUI(){
         itemTable.reloadData()
-        print("updated data, rows: \(category?.workouts.count)")
+        print("updated data, rows: \(String(describing: category?.workouts.count))")
     }
     
     @IBAction func unwindToItemList(_ unwindSegue: UIStoryboardSegue) {
+        
         let sourceViewController = unwindSegue.source as? AddItemViewController
+        
         // Use data from the view controller which initiated the unwind segue
         if let workout = sourceViewController?.workout {
             if checkIfEdit == false {
-                print("edit is false")
+                print("adding item")
                 category?.workouts.append(workout)
                 print("added to array")
             } else {
-                print("edit is true")
+                print("editing item")
                 category?.workouts[sourceViewController!.indexOfWorkout] = workout
                 print("item has been replaced")
                 checkIfEdit = false
@@ -144,35 +149,42 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
             print("operation cancelled")
         }
         
-//        UserDefaults.standard.set(allCategories, forKey: "allCategories")
+        if let currentCategory = category {
+            allCategories?[categoryIndex] = currentCategory
+        }
+        
+        if let encoded = try? JSONEncoder().encode(allCategories) {
+            UserDefaults.standard.set(encoded, forKey: "allCategories")
+        }
         
         updateUI()
     }
     
+    //---------------------------REDUNDANT FUNCTION
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        let vc = segue.destination as? ItemDetailViewController
-        
-        if segue.identifier == "viewItem" {
-            
-            let vc = segue.destination as? ItemDetailViewController
-            vc?.workout = selectedWorkout
-            
-        } else if segue.identifier == "editItem"{
-            
-            let vc = segue.destination as? ItemDetailViewController
-            vc?.workout = selectedWorkout
-            
-        } else if segue.identifier == "viewList" {
-            
-            let vc = segue.destination as? CategoryTableViewController
-            print("index : \(vc?.indexOfCategory)")
-            print("item : \(vc?.cat)")
-            
-            
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        //If user clicks on item in this view, set the detail view controller workout object to the one selected
+
+//        if segue.identifier == "viewItem" {
+//
+//            let vc = segue.destination as? ItemDetailViewController
+//            vc?.workout = selectedWorkout
+//
+//        } else if segue.identifier == "editItem"{
+//
+//            let vc = segue.destination as? ItemDetailViewController
+//            vc?.workout = selectedWorkout
+//
+//        } else if segue.identifier == "viewList" {
+//
+//            let vc = segue.destination as? CategoryTableViewController
+//            print("index : \(String(describing: vc?.indexOfCategory))")
+//            print("item : \(String(describing: vc?.cat))")
+//
+//
+//        }
+//
+//    }
     
 }

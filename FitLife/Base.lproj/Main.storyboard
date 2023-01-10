@@ -360,11 +360,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="Zzb-DX-qOC">
-                                <rect key="frame" x="5" y="-1" width="405" height="896"/>
+                                <rect key="frame" x="4" y="-1" width="406" height="895"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qux-0n-7xF">
-                                        <rect key="frame" x="0.0" y="168" width="405" height="450"/>
+                                        <rect key="frame" x="0.5" y="168" width="405" height="450"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rbe-zO-6Gm">
                                                 <rect key="frame" x="0.0" y="0.0" width="405" height="50"/>
@@ -646,7 +646,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Koa-Kn-YPd">
-                                        <rect key="frame" x="142.5" y="724" width="120" height="40"/>
+                                        <rect key="frame" x="143" y="724" width="120" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="Brv-Dh-MFT"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="z1T-7b-Ctr"/>
@@ -667,7 +667,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aUf-hG-WpF">
-                                        <rect key="frame" x="152.5" y="48" width="100" height="100"/>
+                                        <rect key="frame" x="153" y="48" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="J1A-rt-fno"/>
                                             <constraint firstAttribute="width" constant="100" id="i1o-eA-aLp"/>
@@ -701,14 +701,17 @@
                     <navigationItem key="navigationItem" id="hgF-30-XHj"/>
                     <connections>
                         <outlet property="ageLabel" destination="HdM-St-w9u" id="h1r-NE-ta7"/>
+                        <outlet property="ageSliderValue" destination="pdH-Ft-E82" id="dNd-Q4-mjM"/>
                         <outlet property="date" destination="FCd-r0-eWi" id="nAf-6C-BVP"/>
                         <outlet property="genderPicker" destination="XA4-MQ-dcx" id="VkO-1o-yQP"/>
                         <outlet property="heightLabel" destination="iHG-wS-nJ8" id="KdZ-4k-lW0"/>
+                        <outlet property="heightSliderValue" destination="0RH-XI-9Bd" id="VxK-WX-Ltm"/>
                         <outlet property="id" destination="7Cb-X4-1pu" id="bqC-D1-APY"/>
                         <outlet property="imageUser" destination="aUf-hG-WpF" id="E4c-Rz-g0j"/>
                         <outlet property="location" destination="0Hj-G4-O4n" id="A55-YI-xll"/>
                         <outlet property="nameText" destination="Ui3-gq-xpO" id="gnG-TB-fHd"/>
                         <outlet property="weightLabel" destination="QoY-Dh-w67" id="LVv-GD-JY6"/>
+                        <outlet property="weightSliderValue" destination="cj7-Sz-Fqk" id="Eic-te-s2e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S0a-Oo-35v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -958,7 +961,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npc-Xs-QJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="1485"/>
+            <point key="canvasLocation" x="2951" y="1485"/>
         </scene>
         <!--itemPage-->
         <scene sceneID="kjE-V9-Fhx">
