@@ -37,6 +37,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         age = Int(sender.value)
         ageLabel.text = "Age " + String(age)
         
+        
     }
     @IBAction func heightSlider(_ sender: UISlider) {
         height = Int(sender.value)
@@ -45,8 +46,8 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     @IBOutlet weak var genderPicker: UIPickerView!
     @IBOutlet weak var ageLabel: UILabel!
     @IBAction func weightSlider(_ sender: UISlider) {
-        weight = Int(sender.value)
-        weightLabel.text = "Weight " + String(weight)
+            weight = Int(sender.value)
+            weightLabel.text = "Weight " + String(weight)
     }
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -60,7 +61,6 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.onClickSelectedImage))
         
         imageUser.addGestureRecognizer(tapGesture)
-        
         imageUser.isUserInteractionEnabled = true
         
         genderPicker.dataSource = self
@@ -76,16 +76,19 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             let ages  = String(UserDefaults.standard.integer(forKey: "age"))
             ageLabel.text = "Age " + ages
             ageSliderValue.value = Float(UserDefaults.standard.integer(forKey: "age"))
+            age = UserDefaults.standard.integer(forKey: "age")
         }
         if UserDefaults.standard.object(forKey: "weight") != nil {
             let weights  = String(UserDefaults.standard.integer(forKey: "weight"))
             weightLabel.text = "Weight " + weights
             weightSliderValue.value = Float(UserDefaults.standard.integer(forKey: "weight"))
+            weight = UserDefaults.standard.integer(forKey: "weight")
         }
         if UserDefaults.standard.object(forKey: "height") != nil {
             let heights  = String(UserDefaults.standard.integer(forKey: "height"))
             heightLabel.text = "Height " + heights
             heightSliderValue.value = Float(UserDefaults.standard.integer(forKey: "height"))
+            height = UserDefaults.standard.integer(forKey: "height")
         }
         if UserDefaults.standard.object(forKey: "location") != nil {
             location.text = UserDefaults.standard.string(forKey: "location")
@@ -106,7 +109,6 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         first = genderPicker.selectedRow(inComponent: 0)
         let ingdata = imageUser.image?.pngData()
-        
         if let name = nameText.text, let location = location.text, let image = ingdata{
            let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: first, DOB: date.date, location: location, image: image)
             let userDefaults = UserDefaults.standard
@@ -121,7 +123,6 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             userDefaults.set(user.image, forKey: "image")
             
             iutput = User.save(user)
-            
             
         }
         output = User.load(iutput!)
