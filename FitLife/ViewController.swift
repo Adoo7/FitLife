@@ -40,6 +40,11 @@ class ViewController: UIViewController {
             if UserDefaults.standard.object(forKey: "image") != nil {
                 profilepic.image = UIImage(data: UserDefaults.standard.data(forKey: "image")!)
             }
+            if UserDefaults.standard.object(forKey: "waterCounter") != nil {
+                waterCounter = UserDefaults.standard.integer(forKey: "waterCounter")
+                let water = String(waterCounter) + "/8"
+                waterLabel.text = water
+            }
         }
         
         let userDefaults = UserDefaults.standard
@@ -61,6 +66,7 @@ class ViewController: UIViewController {
         {
             waterCounter = waterCounter - 1;
             waterLabel.text = "\(waterCounter)/8";
+            UserDefaults.standard.set(waterCounter, forKey: "waterCounter")
         }
         
     }
@@ -68,6 +74,7 @@ class ViewController: UIViewController {
     @IBAction func increaseWater(_ sender: Any) {
         waterCounter = waterCounter + 1;
         waterLabel.text = "\(waterCounter)/8";
+        UserDefaults.standard.set(waterCounter, forKey: "waterCounter")
     }
     var calorieLabelsArr: [String] = []
     var calorieSlidersArr: [String] = []

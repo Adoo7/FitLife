@@ -22,14 +22,9 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     var selectedWorkout: Workout?
     var checkIfEdit = false
     var category: Category?
+    var allCategories: [Category]?
     
-    var data:[Workout] = [
-        Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
-        Workout(title: "Dumbell Curl", imageName: "FitLife_Logo", duration: 7, description: "Curling the dubell towards the chest and flattening the arm in repetition", difficulty: "Easy"),
-        Workout(title: "Shoulder Press", imageName: "FitLife_Logo", duration: 4, description: "Pressing the bar bell over the head while engaging the shoulder muscles", difficulty: "Hard"),
-        Workout(title: "Leg Press", imageName: "FitLife_Logo", duration: 7, description: "Press the weight away from the body using the leg press machine", difficulty: "Easy")
-    ]
-    
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var itemTable: UITableView!
     
 
@@ -37,12 +32,16 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         print("view loaded")
+        if let categoryPassed = category {
+            print("loaded category: \(categoryPassed)")
+        }
         
-        
+        titleLbl.text = category?.title
         
         // Do any additional setup after loading the view.
         itemTable.dataSource = self
         itemTable.delegate = self
+        
         updateUI()
     }
     
@@ -56,7 +55,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if editingStyle == .delete {
             tableView.beginUpdates()
-            data.remove(at: indexPath.row)
+            category?.workouts.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .middle)
             tableView.endUpdates()
         }
@@ -69,7 +68,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
             print("edit")
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddItemViewController") as! AddItemViewController
-            vc.workout = self.data[indexPath.row]
+            vc.workout = self.category?.workouts[indexPath.row]
             vc.indexOfWorkout = indexPath.row
             self.checkIfEdit = true
             self.present(vc, animated: true)
@@ -78,7 +77,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
             print("delete")
-            self.data.remove(at: indexPath.row)
+            self.category?.workouts.remove(at: indexPath.row)
             tableView.reloadData()
             completionHandler(true)
         }
@@ -92,30 +91,39 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
    
     //giving the amount of rows in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        if let count = category?.workouts.count {
+            return count
+        }
+        return 0
     }
     
     //setting the UI of each cell in table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let workout = data[indexPath.row]
+        let workout = category?.workouts[indexPath.row]
         let cell = itemTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ItemTableViewCell
-        cell.label.text = workout.title
-        cell.iconImage.image = UIImage(named: workout.imageName)
+        if let title = workout?.title, let imageName = workout?.imageName {
+            cell.label.text = title
+            cell.iconImage.image = UIImage(named: imageName)
+        }
         return cell
     }
 
     //selecting cell function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedWorkout = data[indexPath.row]
+        selectedWorkout = category?.workouts[indexPath.row]
         print("selected row \(indexPath.row)")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "detailView") as! ItemDetailViewController
+        vc.workout = category?.workouts[indexPath.row]
+        self.present(vc, animated: true)
+        
         
     }
     
     // to update the table data for new objects
     func updateUI(){
         itemTable.reloadData()
-        print("updated data, rows: \(data.count)")
+        print("updated data, rows: \(category?.workouts.count)")
     }
     
     @IBAction func unwindToItemList(_ unwindSegue: UIStoryboardSegue) {
@@ -124,20 +132,19 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         if let workout = sourceViewController?.workout {
             if checkIfEdit == false {
                 print("edit is false")
-                data.append(workout)
+                category?.workouts.append(workout)
                 print("added to array")
             } else {
                 print("edit is true")
-                data[sourceViewController!.indexOfWorkout] = workout
+                category?.workouts[sourceViewController!.indexOfWorkout] = workout
                 print("item has been replaced")
                 checkIfEdit = false
             }
-            
-//            UserDefaults.standard.set(data, forKey: "WorkoutArray")
-            
         } else {
             print("operation cancelled")
         }
+        
+//        UserDefaults.standard.set(allCategories, forKey: "allCategories")
         
         updateUI()
     }
@@ -156,6 +163,13 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
             
             let vc = segue.destination as? ItemDetailViewController
             vc?.workout = selectedWorkout
+            
+        } else if segue.identifier == "viewList" {
+            
+            let vc = segue.destination as? CategoryTableViewController
+            print("index : \(vc?.indexOfCategory)")
+            print("item : \(vc?.cat)")
+            
             
         }
         

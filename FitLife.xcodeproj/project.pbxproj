@@ -139,8 +139,7 @@
 				60B8B97C29632024005F396B /* CategoryTableViewController.swift */,
 				60B8B97E2963205C005F396B /* CategoryTableViewCell.swift */,
 				60B8B98329632149005F396B /* ViewController.swift */,
-				60B8B97A29631FEB005F396B /* viewControllers */,
-				60B8B97929631FBE005F396B /* Storyboards */,
+				60B8B9772961FBFA005F396B /* CalorieCounterViewController.swift */,
 				608CB6812957BE880093B5F8 /* Assets.xcassets */,
 				608CB6862957BE880093B5F8 /* Info.plist */,
 			);
@@ -162,37 +161,6 @@
 				608CB69B2957BE890093B5F8 /* FitLifeUITestsLaunchTests.swift */,
 			);
 			path = FitLifeUITests;
-			sourceTree = "<group>";
-		};
-		60B8B97929631FBE005F396B /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		60B8B97A29631FEB005F396B /* viewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				60B8B98029632082005F396B /* categoryView */,
-				60B8B97D2963204E005F396B /* itemView */,
-				60B8B9772961FBFA005F396B /* CalorieCounterViewController.swift */,
-			);
-			path = viewControllers;
-			sourceTree = "<group>";
-		};
-		60B8B97D2963204E005F396B /* itemView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = itemView;
-			sourceTree = "<group>";
-		};
-		60B8B98029632082005F396B /* categoryView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = categoryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

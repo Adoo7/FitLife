@@ -37,7 +37,7 @@ class AddCategoryViewController: UIViewController {
         
         if let name = categoryName.text
         {
-            category = Category(title: name, image: "Bodybuilding_Image")
+            category = Category(title: name, image: "Bodybuilding_Image", workouts: [])
         }
         
     }

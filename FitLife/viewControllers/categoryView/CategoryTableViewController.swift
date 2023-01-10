@@ -6,10 +6,17 @@
 //
 
 import UIKit
-struct Category {
+
+class Category {
+    internal init(title: String, image: String, workouts: [Workout]) {
+        self.title = title
+        self.image = image
+        self.workouts = workouts
+    }
+    
     let title: String
     let image: String
-//    let workouts: [Workout]
+    var workouts: [Workout]
 }
 
 class CategoryTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -19,18 +26,40 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     
     var indexOfCategory = 0
     
-    var list: [Category] = [
-        Category(title: "Bodybuilding", image: "Bodybuilding_Image"),
-        Category(title: "Crossfit", image: "Crossfit_Image"),
-        Category(title: "HIIT", image: "HIIT_Image"),
-        Category(title: "Yoga", image: "Yoga_Image")
+    var workoutList:[Workout] = [
+        Workout(title: "Bench Press", imageName: "FitLife_Logo", duration: 5, description: "pressing the bar bell upwards while laying down on the bench", difficulty: "Medium"),
+        Workout(title: "Dumbell Curl", imageName: "FitLife_Logo", duration: 7, description: "Curling the dubell towards the chest and flattening the arm in repetition", difficulty: "Easy"),
+        Workout(title: "Shoulder Press", imageName: "FitLife_Logo", duration: 4, description: "Pressing the bar bell over the head while engaging the shoulder muscles", difficulty: "Hard"),
+        Workout(title: "Leg Press", imageName: "FitLife_Logo", duration: 7, description: "Press the weight away from the body using the leg press machine", difficulty: "Easy")
     ]
+    
+    var list: [Category] = [
+        Category(title: "Bodybuilding", image: "Bodybuilding_Image", workouts: []),
+        Category(title: "Crossfit", image: "Crossfit_Image", workouts: []),
+        Category(title: "HIIT", image: "HIIT_Image", workouts: []),
+        Category(title: "Yoga", image: "Yoga_Image", workouts: [])
+    ]
+    
+    
    
     @IBOutlet weak var categoryTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var i = 0
+        for workingCategory in list {
+            i += 1
+            workingCategory.workouts = workoutList
+        }
+        if let categories = UserDefaults.standard.object(forKey: "allCategories") {
+            list = categories as! [Category]
+        }
+        
+            
+        
+        
+        
         categoryTable.dataSource = self
         categoryTable.delegate = self
         update()
@@ -82,6 +111,11 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cat = list[indexPath.row]
         print("selected row \(indexPath.row)")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemListViewController
+        vc.category = cat
+        vc.allCategories = list
+        self.present(vc, animated: true)
+
         
     }
     func update(){
@@ -111,8 +145,6 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        let vc = segue.destination as? ItemDetailViewController
-        
         if segue.identifier == "viewItem" {
             
             let vc = segue.destination as? AddCategoryViewController
@@ -122,7 +154,7 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
             
             let vc = segue.destination as? AddCategoryViewController
             vc?.category = cat
-            
+        
         }
         
     }
