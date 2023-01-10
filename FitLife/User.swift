@@ -14,12 +14,12 @@ class User: Codable{
     var age: Int;
     var weight: Int;
     var height: Int;
-    var gender: String;
+    var gender: Int;
     var DOB: Date;
     var location: String;
     var image: Data;
     
-    init(id: Int,name: String, age: Int, weight: Int, height: Int, gender: String, DOB: Date, location: String, image: Data){
+    init(id: Int,name: String, age: Int, weight: Int, height: Int, gender: Int, DOB: Date, location: String, image: Data){
         self.id = id;
         self.name = name
         self.age = age

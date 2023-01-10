@@ -26,6 +26,9 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
     
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var imageUser: UIImageView!
+    @IBOutlet weak var weightSliderValue: UISlider!
+    @IBOutlet weak var ageSliderValue: UISlider!
+    @IBOutlet weak var heightSliderValue: UISlider!
     
     @IBAction func save(_ sender: Any) {
     }
@@ -72,14 +75,17 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         if UserDefaults.standard.object(forKey: "age") != nil {
             let ages  = String(UserDefaults.standard.integer(forKey: "age"))
             ageLabel.text = "Age " + ages
+            ageSliderValue.value = Float(UserDefaults.standard.integer(forKey: "age"))
         }
         if UserDefaults.standard.object(forKey: "weight") != nil {
             let weights  = String(UserDefaults.standard.integer(forKey: "weight"))
             weightLabel.text = "Weight " + weights
+            weightSliderValue.value = Float(UserDefaults.standard.integer(forKey: "weight"))
         }
         if UserDefaults.standard.object(forKey: "height") != nil {
             let heights  = String(UserDefaults.standard.integer(forKey: "height"))
             heightLabel.text = "Height " + heights
+            heightSliderValue.value = Float(UserDefaults.standard.integer(forKey: "height"))
         }
         if UserDefaults.standard.object(forKey: "location") != nil {
             location.text = UserDefaults.standard.string(forKey: "location")
@@ -92,7 +98,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             date.date = dates
         }
         if UserDefaults.standard.object(forKey: "gender") != nil{
-            print("not done")
+            genderPicker.selectRow(UserDefaults.standard.integer(forKey: "gender"), inComponent: 0, animated: true)
         }
     
         // Do any additional setup after loading the view.
@@ -102,7 +108,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
         let ingdata = imageUser.image?.pngData()
         
         if let name = nameText.text, let location = location.text, let image = ingdata{
-           let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: data[first], DOB: date.date, location: location, image: image)
+           let user =  User(id: random, name: name , age: age, weight: weight, height: height, gender: first, DOB: date.date, location: location, image: image)
             let userDefaults = UserDefaults.standard
             userDefaults.set(user.id, forKey: "id")
             userDefaults.set(user.name, forKey: "name")
@@ -113,6 +119,7 @@ class UserSettingsViewController: UIViewController, UINavigationControllerDelega
             userDefaults.set(user.DOB, forKey: "DOB")
             userDefaults.set(user.location, forKey: "location")
             userDefaults.set(user.image, forKey: "image")
+            
             iutput = User.save(user)
             
             
