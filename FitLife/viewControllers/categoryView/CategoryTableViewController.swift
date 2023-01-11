@@ -75,7 +75,8 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
     }
 
     // MARK: - Table view data source
-
+     
+    //number of rows
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return list.count
     }
@@ -91,9 +92,10 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
 
         return cell
     }
-    
+    //function to make the tableView swipe
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        //to edit the category
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
             print("edit")
             self.indexOfCategory = indexPath.row
@@ -104,6 +106,7 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
             completionHandler(true)
             
         }
+        //to delete the category
         let delete = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
             print("delete")
             self.list.remove(at: indexPath.row)
@@ -129,10 +132,13 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
 
         
     }
+    //refreshes the table view
     func update(){
         categoryTable.reloadData()
         print("updated data, rows: \(list.count)")
     }
+    
+    //to save and display the data when the save buttoon is clicked in the "addCategory" page
     @IBAction func unwindToCategoryList(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as? AddCategoryViewController
         
@@ -164,6 +170,8 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         
         update()
     }
+    
+    //to transition to Add Category controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "viewItem" {

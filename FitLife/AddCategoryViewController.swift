@@ -20,13 +20,14 @@ class AddCategoryViewController: UIViewController {
         //dismiss keyboard
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
 
-        
+        //display when edit is clicked
         if let passedCategory = category {
             categoryName.text = passedCategory.title
         }
 
         // Do any additional setup after loading the view.
     }
+    //creating an object of category
     required init?(coder: NSCoder, category: Category?) {
         self.category = category
         super.init(coder: coder)
@@ -36,6 +37,7 @@ class AddCategoryViewController: UIViewController {
        super.init(coder: aDecoder)
     }
     
+    //when the save button is clicked, adding the information to the new category
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         
