@@ -20,6 +20,8 @@ class AddItemViewController: UIViewController {
         "calesthenics",
         "swimming"
     ]
+//    var pickerIndex = 0
+//    var picker2Index = 0
     var difficultyPickerData: [String] = [
         "Easy",
         "Medium",
@@ -40,23 +42,31 @@ class AddItemViewController: UIViewController {
         
         //dismiss keyboard functionality
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
-
-        
-        if let passedWorkout = workout {
-            itemNameField.text = passedWorkout.title
-            durationSlider.value =  Float(passedWorkout.duration)
-            descriptionField.text = passedWorkout.description
-            sliderLabel.text = String(passedWorkout.duration)
-            
-//            pickerData[iconPicker.selectedRow(inComponent: 0)] = passedWorkout.imageName
-//            difficultyPickerData[difficultyPicker.selectedRow(inComponent: 0)] = passedWorkout.difficulty
-        }
             
         // Do any additional setup after loading the view.
         self.difficultyPicker.dataSource = self
         self.difficultyPicker.delegate = self
         self.iconPicker.dataSource = self
         self.iconPicker.delegate = self
+        
+        
+        //check if there is a workout item being passed into view
+        //if there is, then display its attributes
+        if let passedWorkout = workout {
+            
+            itemNameField.text = passedWorkout.title
+            durationSlider.value =  Float(passedWorkout.duration)
+            descriptionField.text = passedWorkout.description
+            sliderLabel.text = String(passedWorkout.duration)
+            iconPicker.selectRow(passedWorkout.pickerIndex, inComponent: 0, animated: true)
+            difficultyPicker.selectRow(passedWorkout.picker2Index, inComponent: 0, animated: true)
+            
+            print(passedWorkout.pickerIndex)
+            print(passedWorkout.picker2Index)
+            print("workout passed into view and variables set")
+            
+        }
+        
     }
     
     
@@ -68,13 +78,9 @@ class AddItemViewController: UIViewController {
     @IBAction func sliderMoved(_ sender: Any) {
         sliderLabel.text = String(Int(durationSlider.value))
     }
-    @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var descriptionField: UITextView!
     
-    @IBAction func saveButtonPressed(_ sender: Any) {
-        
-        
-        
-    }
+    @IBAction func saveButtonPressed(_ sender: Any) {}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -83,8 +89,10 @@ class AddItemViewController: UIViewController {
         
         if let name = itemNameField.text, let description = descriptionField.text
         {
-            workout = Workout(title: name, imageName: iconString, duration: Int(durationSlider.value), description: description, difficulty: difficulty)
+            workout = Workout(title: name, imageName: iconString, duration: Int(durationSlider.value), description: description, difficulty: difficulty, pickerIndex: iconPicker.selectedRow(inComponent: 0), picker2Index: difficultyPicker.selectedRow(inComponent: 0))
             print("prepared for segue\n workout passed: \(workout!)")
+            print("picker 1: \(workout?.pickerIndex)")
+            print("picker 2: \(workout?.picker2Index)")
         }
         
     }

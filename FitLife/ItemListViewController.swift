@@ -14,6 +14,8 @@ struct Workout:Codable {
     var duration: Int
     var description: String
     var difficulty: String
+    var pickerIndex: Int = 0
+    var picker2Index: Int = 0
 }
 
 class ItemListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -42,6 +44,8 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         titleLbl.text = category?.title
         
         // Do any additional setup after loading the view.
+        
+        //setting up data source and delegate for table view controller
         itemTable.dataSource = self
         itemTable.delegate = self
         
@@ -114,6 +118,7 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
 
     //selecting cell function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         selectedWorkout = category?.workouts[indexPath.row]
         print("selected row \(indexPath.row)")
         let vc = storyboard?.instantiateViewController(withIdentifier: "detailView") as! ItemDetailViewController

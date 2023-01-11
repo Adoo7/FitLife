@@ -32,6 +32,7 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         Workout(title: "Leg Press", imageName: "FitLife_Logo", duration: 7, description: "Press the weight away from the body using the leg press machine", difficulty: "Easy")
     ]
     
+    //list of beginning categories
     var list: [Category] = [
         Category(title: "Bodybuilding", image: "Bodybuilding_Image", workouts: []),
         Category(title: "Crossfit", image: "Crossfit_Image", workouts: []),
@@ -39,6 +40,7 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         Category(title: "Yoga", image: "Yoga_Image", workouts: [])
     ]
     
+    //in case a reset button need to be added in the future
     var presetCategories: [Category] = [
         Category(title: "Bodybuilding", image: "Bodybuilding_Image", workouts: []),
         Category(title: "Crossfit", image: "Crossfit_Image", workouts: []),
