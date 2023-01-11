@@ -15,24 +15,30 @@ class ItemDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //run the updateUI() function
         updateUI()
     }
 
     
-    
+    //Creating outlets
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var timeLbl: UILabel!
     @IBOutlet weak var descriptionLbl: UILabel!
     
+    //Creating an updateUI() function
     func updateUI() {
         
+        //setting time to the workout.duration
         if let time = workout?.duration {
+            //setting the text of the time labbel
             timeLbl.text = "Time: \(time)"
         } else {
+            //if doesnt exist make time unspecified
             timeLbl.text = "Time: unspecified"
         }
-        
+        //set the title label to the workout's title
         titleLbl.text = workout?.title
+        //set the description label to the workout description
         descriptionLbl.text = workout?.description
         
     }
