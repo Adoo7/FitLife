@@ -233,6 +233,7 @@ class CalorieCounterViewController: UIViewController {
     */
     
     //adding total calories together into a variable for it to be stored locally for saving purposes later on
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let lbl1 = slider1Value.value
         let lbl2 = slider2Value.value
