@@ -52,22 +52,24 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         updateUI()
     }
     
-    //1.0 to be able to delete cells
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
+    //-----------------Old way of deleting cell
     
-    //1.1
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            tableView.beginUpdates()
-            category?.workouts.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .middle)
-            tableView.endUpdates()
-        }
-        
-    }
+//    //1.0 to be able to delete cells
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        return .delete
+//    }
+//
+//    //1.1 to allow editing when
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == .delete {
+//            tableView.beginUpdates()
+//            category?.workouts.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .middle)
+//            tableView.endUpdates()
+//        }
+//
+//    }
     
     //2.1 adding edit/delete functionality
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

@@ -40,34 +40,21 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         Category(title: "Yoga", image: "Yoga_Image", workouts: [])
     ]
     
-    //in case a reset button need to be added in the future
-    var presetCategories: [Category] = [
-        Category(title: "Bodybuilding", image: "Bodybuilding_Image", workouts: []),
-        Category(title: "Crossfit", image: "Crossfit_Image", workouts: []),
-        Category(title: "HIIT", image: "HIIT_Image", workouts: []),
-        Category(title: "Yoga", image: "Yoga_Image", workouts: [])
-    ]
-    
-   
     @IBOutlet weak var categoryTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         
         var i = 0
+        
         for workingCategory in list {
             i += 1
             workingCategory.workouts = workoutList
         }
+        
         if let categories = UserDefaults.standard.object(forKey: "allCategories") as? Data, let data = try? JSONDecoder().decode([Category].self, from: categories) {
                 list = data
         }
-        
-            
-        
-        
         
         categoryTable.dataSource = self
         categoryTable.delegate = self
@@ -92,6 +79,7 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
 
         return cell
     }
+    
     //function to make the tableView swipe
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
@@ -113,13 +101,12 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
             tableView.reloadData()
             completionHandler(true)
         }
-        
         delete.backgroundColor = .red
         
         let swipe = UISwipeActionsConfiguration(actions: [edit, delete])
         return swipe
-        
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cat = list[indexPath.row]
         indexOfCategory = indexPath.row
@@ -130,7 +117,6 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         vc.categoryIndex = indexOfCategory
         self.present(vc, animated: true)
 
-        
     }
     //refreshes the table view
     func update(){
@@ -171,22 +157,24 @@ class CategoryTableViewController: UIViewController, UITableViewDataSource, UITa
         update()
     }
     
+    
+    
     //to transition to Add Category controller
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "viewItem" {
-            
-            let vc = segue.destination as? AddCategoryViewController
-            vc?.category = cat
-            
-        } else if segue.identifier == "editItem"{
-            
-            let vc = segue.destination as? AddCategoryViewController
-            vc?.category = cat
-        
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "viewItem" {
+//
+//            let vc = segue.destination as? AddCategoryViewController
+//            vc?.category = cat
+//
+//        } else if segue.identifier == "editItem"{
+//
+//            let vc = segue.destination as? AddCategoryViewController
+//            vc?.category = cat
+//
+//        }
+//
+//    }
 }
 
 

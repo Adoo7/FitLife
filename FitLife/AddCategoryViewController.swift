@@ -40,7 +40,6 @@ class AddCategoryViewController: UIViewController {
     //when the save button is clicked, adding the information to the new category
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
         if let name = categoryName.text
         {
             category = Category(title: name, image: "Bodybuilding_Image", workouts: [])

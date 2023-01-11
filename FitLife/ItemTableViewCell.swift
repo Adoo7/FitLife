@@ -8,8 +8,6 @@
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
-    
-    
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var label: UILabel!
 }
