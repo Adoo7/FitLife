@@ -25,3 +25,9 @@ Developers: Ahmed Sarhan
             Suhaib Rajab
             Ali Khamis
             Hamza Ditta
+
+Ali Khamis reference
+https://www.youtube.com/watch?v=ohXRZPKSwG0
+https://www.youtube.com/watch?v=EsheQe6U_WE
+https://stackoverflow.com/questions/66566105/how-to-save-uiimage-to-userdefaults-in-swift-5
+https://stackoverflow.com/questions/25917693/set-a-default-value-for-uipickerview-in-swift
