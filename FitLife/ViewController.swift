@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         //dismiss keyboard when tapping away
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
 
-        
+        // displaying data and retreving data from user defaults
         if UserDefaults.standard.object(forKey: "name") != nil {
             userName.text = UserDefaults.standard.string(forKey: "name")
         }
@@ -30,6 +30,7 @@ class ViewController: UIViewController {
             let weights  = String(UserDefaults.standard.integer(forKey: "weight"))
             weight.text = weights + "kg"
         }
+        //BMI calculator with userDefaults
         if UserDefaults.standard.object(forKey: "bmi") != nil {
             let bmi = UserDefaults.standard.float(forKey: "bmi")
             if bmi < 18.5{
@@ -86,11 +87,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var caloriesLbl: UILabel!
     @IBOutlet weak var profilepic: UIImageView!
-    
+    //getting data segue
     @IBAction func unwindToHomePage(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source as? CalorieCounterViewController
+        //source of data is usersettings
         let source = unwindSegue.source as? UserSettingsViewController
-        
+        //loading the User object from the load function
+        //getting data and displaying them
         if let change = (source? .going){
             let name = change.name
             userName.text = name
@@ -99,11 +102,11 @@ class ViewController: UIViewController {
             weight.text = String(weights)+"kg"
 
             profilepic.image = UIImage(data: change.image)
-            
+            //BMI formula
             let bmi = Float(change.weight) / pow(Float(change.height)/100, 2)
-            
+            //storing bmi in user defaults
             UserDefaults.standard.set(bmi, forKey: "bmi")
-            
+            //bmi calculator in logic to display
             if bmi < 18.5{
                 bmiLabel.text = "Under weight " + String(format: "%.1f", bmi)
             }else if bmi >= 18.5 && bmi <= 24.9{
