@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//creating an extension .clean which cleans a float and turns it into a whole number
 extension Float {
     var clean: String {
        return self.truncatingRemainder(dividingBy: 1) != 0 || self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
@@ -15,7 +15,7 @@ extension Float {
 class CalorieCounterViewController: UIViewController {
 
 
-    
+    //defining variables and textbox outlets, slider outlets, and slider actions
     var totalCalories = 0
     var labelsArr: [String] = []
     var slidersArr: [String] = []
@@ -102,7 +102,7 @@ class CalorieCounterViewController: UIViewController {
     
 
     
-    
+    //save function which aappends the textboxes and slider values into the labels and sliders array
     @IBAction func saveBtn(_ sender: Any) {
         if let calorie1 = (calorieLabel1.text), let calorie2 = calorieLabel2.text, let calorie3 = calorieLabel3.text, let calorie4 = calorieLabel4.text, let calorie5 = calorieLabel5.text, let calorie6 = calorieLabel6.text, let calorie7 = calorieLabel7.text, let calorie8 = calorieLabel8.text, let calorie9 = calorieLabel9.text, let calorie10 = calorieLabel10.text, let calorie11 = calorieLabel11.text, let box1 = textBox1.text, let box2 = textBox2.text, let box3 = textBox3.text, let box4 = textBox4.text, let box5 = textBox5.text, let box6 = textBox6.text, let box7 = textBox7.text, let box8 = textBox8.text, let box9 = textBox9.text, let box10 = textBox10.text, let box11 = textBox11.text
         {
@@ -130,6 +130,7 @@ class CalorieCounterViewController: UIViewController {
             slidersArr.append(calorie10)
             slidersArr.append(calorie11)
             
+            //storing the sliders and labels into userdefaults
             let userDefaults = UserDefaults.standard
             userDefaults.set(slidersArr, forKey: "sliderArray")
             print("labels array is")
@@ -137,7 +138,7 @@ class CalorieCounterViewController: UIViewController {
             print(labelsArr)
             print(labelsArr)
             userDefaults.set(labelsArr, forKey: "labelArray")
-            
+            //combbining the totaal calories, putting it into a variale, and storing the vaarialbe onto UserDefaults
             let lbl1 = slider1Value.value
             let lbl2 = slider2Value.value
             let lbl3 = slider3Value.value
@@ -167,10 +168,13 @@ class CalorieCounterViewController: UIViewController {
 
         
         // Do any additional setup after loading the view.
+        //getting the sliders and labels into variables from the UserDefaults upon the loading of the page
         let userDefaults = UserDefaults.standard
         let strings = userDefaults.object(forKey: "sliderArray") as? [String]
         let labels = userDefaults.object(forKey: "labelArray") as? [String]
         print(labels)
+        
+        //if strings not nil, store the values into the labels and sliders
         if(strings != nil)
         {
             calorieLabel1.text = strings![0]
@@ -228,7 +232,7 @@ class CalorieCounterViewController: UIViewController {
     }
     */
     
-    
+    //adding total calories together into a variable for it to be stored locally for saving purposes later on
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let lbl1 = slider1Value.value
         let lbl2 = slider2Value.value

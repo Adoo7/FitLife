@@ -112,6 +112,9 @@ class ItemListViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
 
+    
+    
+    
     //selecting cell function
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedWorkout = category?.workouts[indexPath.row]
